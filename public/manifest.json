@@ -1,0 +1,47 @@
+{
+    "short_name": "Fractus App",
+    "name": "Fractus",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "logo48.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "logo192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "logo512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "assets/logos/logo-fractus-cor.svg",
+            "sizes": "288x150",
+            "type": "image/svg"
+        },
+        {
+            "src": "assets/logos/logo-orkneytech.svg",
+            "sizes": "567x436",
+            "type": "image/svg"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#249DD9",
+    "background_color": "#ffffff",
+    "prefer_related_applications": true,
+    "related_applications": [
+        {
+            "platform": "play",
+            "id": "com.google.samples.apps.iosched"
+        }
+    ]
+}
