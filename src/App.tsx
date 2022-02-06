@@ -2,8 +2,8 @@ import React from 'react'
 import './App.css'
 
 import RoutesModule from './routesModule'
-import Header from './components/nav/header'
-import Footer from './components/nav/footer'
+import Header from './components/nav/header/header'
+import Footer from './components/nav/footer/footer'
 
 import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
