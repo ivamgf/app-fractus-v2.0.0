@@ -11,7 +11,7 @@ export default function Footer() {
 
 const FooterInit = styled.div`
     background-color: #249dd9;
-    width: 100%;
+    max-width: 100%;
     padding: 2em;
     text-align: center;
     color: #ffffff;
