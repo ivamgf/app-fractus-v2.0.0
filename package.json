@@ -5,8 +5,12 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "test": "jest --env=jsdom",
+        "test:watch": "jest --watchAll",
+        "eject": "react-scripts eject",
+        "prepare": "husky install",
+        "precommit": "npm run test",
+        "prepush": "npm run lint"
     },
     "eslintConfig": {
         "extends": [
@@ -70,6 +74,7 @@
         "husky": "^7.0.4",
         "jest": "^27.4.5",
         "jest-dom": "^4.0.0",
+        "jest-svg-transformer": "^1.0.0",
         "lint-staged": "^12.3.1",
         "prettier": "2.5.1",
         "react-cookie": "^4.1.1",
