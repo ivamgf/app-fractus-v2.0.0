@@ -5,7 +5,7 @@ export default function Accept() {
   return (
       <>
           <Main>
-
+            <p>Accept</p>
           </Main>
       </>
   )
