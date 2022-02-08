@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography'
 import BasicButton from '../../Buttons/BasicButton'
 import CheckboxLabels from '../../Checkbox/CheckboxLabels'
 import logo from '../../../../assets/logos/logo-fractus-cor.svg'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function CardModel(props: TypeAccept): JSX.Element {
     const title = props.header.title
@@ -34,12 +35,13 @@ export default function CardModel(props: TypeAccept): JSX.Element {
               </CardContent>
               <CardActions>
                   <CheckboxLabels value={checkBox.value} label={checkBox.label} checkedState={checkBox.checkedState} />
-                  <Link to="/terms" style={{textDecoration: "none"}}>
+                  <Link to="/terms" style={{textDecoration: 'none'}}>
                     <BasicButton value={buttonLink.value} variant={buttonLink.variant} color={buttonLink.color} disabled={buttonLink.disabled} />
                   </Link>
+
               </CardActions>
           </Card>
-          <Link to="/home" style={{textDecoration: "none"}}>
+          <Link to="/home" style={{textDecoration: 'none'}} onClick={ (event) => event.preventDefault() }>
             <BasicButton value={buttonAdvance.value} variant={buttonAdvance.variant} color={buttonAdvance.color} disabled={buttonAdvance.disabled} />
           </Link>
 
