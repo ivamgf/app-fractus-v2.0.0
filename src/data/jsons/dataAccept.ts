@@ -1,5 +1,5 @@
 
-const dataModels = {
+const dataAccept = {
   header: {
       title: 'Aceite os Termos',
       subTitle: '',
@@ -9,7 +9,7 @@ const dataModels = {
   },
   children: {
       checkBox: {
-        value: 'Termos',
+        value: 'no',
         label: 'Aceitar termos',
         checkedState: false
       },
@@ -17,17 +17,17 @@ const dataModels = {
           buttonAdvance: {
             value: 'Avançar',
             variant: 'contained',
-            color: 'primary',
+            color: 'backgroundColor: "#249DD9"',
             disabled: true
           },
           buttonLink: {
             value: 'Ler Termos ...',
             variant: 'text',
-            color: 'primary',
+            color: 'backgroundColor: "#249DD9"',
             disabled: false
           }
       },
   }
 }
 
-export default dataModels;
+export default dataAccept;
