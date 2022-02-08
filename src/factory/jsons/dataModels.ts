@@ -22,8 +22,7 @@ const dataModels = {
       routes: {
           route1: 'Início',
           route2: '',
-          route3: '',
-          routeUrl: '/favicon.ico',
+          route3: ''
       },
       buttons: {
           buttonPrev: {

@@ -12,6 +12,7 @@ import Main from './views/main'
 import Terms from './views/terms';
 import Intro from './views/classes/sumary/intro'
 import Class from './views/classes/sumary/class';
+import Page404 from './views/page404';
 
 const RoutesModule = () => (
   <Router>
@@ -28,6 +29,7 @@ const RoutesModule = () => (
       <Route path="/classes" element={<Classes />} />
       <Route path="/classes/sumary/intro" element={<Intro />} />
       <Route path="/classes/sumary/class" element={<Class />} />
+      <Route path="*" element={<Page404 />} />
     </Routes>
   </Router>
 );

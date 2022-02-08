@@ -14,5 +14,3 @@ export const redirectAccept = async () => {
     navigate('/accept')
   }, 3000)
 }
-
-

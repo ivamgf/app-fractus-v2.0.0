@@ -1,15 +1,16 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import BasicButton from '../../Buttons/BasicButton'
-import CheckboxLabel from '../../Checkbox/CheckboxLabels'
+import CheckboxLabels from '../../Checkbox/CheckboxLabels'
+import logo from '../../../../assets/logos/logo-fractus-cor.svg'
 
-export default function CardModel(props: any): JSX.Element {
+export default function CardModel(props: TypeAccept): JSX.Element {
     const title = props.header.title
-    const logo = props.header.image
     const checkBox = props.checkBox
     const buttonAdvance = props.buttons.buttonAdvance
     const buttonLink = props.buttons.buttonLink
@@ -32,11 +33,16 @@ export default function CardModel(props: any): JSX.Element {
                   </Typography>
               </CardContent>
               <CardActions>
-                  
-                  <BasicButton value={buttonLink.value} variant={buttonLink.variant} color={buttonLink.color} disabled={buttonLink.disabled} />
+                  <CheckboxLabels value={checkBox.value} label={checkBox.label} checkedState={checkBox.checkedState} />
+                  <Link to="/terms" style={{textDecoration: "none"}}>
+                    <BasicButton value={buttonLink.value} variant={buttonLink.variant} color={buttonLink.color} disabled={buttonLink.disabled} />
+                  </Link>
               </CardActions>
           </Card>
-          <BasicButton value={buttonAdvance.value} variant={buttonAdvance.variant} color={buttonAdvance.color} disabled={buttonAdvance.disabled} />
+          <Link to="/home" style={{textDecoration: "none"}}>
+            <BasicButton value={buttonAdvance.value} variant={buttonAdvance.variant} color={buttonAdvance.color} disabled={buttonAdvance.disabled} />
+          </Link>
+
         </>
     )
 }

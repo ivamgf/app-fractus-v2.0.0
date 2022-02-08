@@ -2,6 +2,6 @@
 
 type TypeModel = {
   header: string,
-  children: string
+  children?: string
 }
 
