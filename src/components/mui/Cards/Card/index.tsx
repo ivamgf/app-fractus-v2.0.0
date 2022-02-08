@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography'
 import BasicButton from '../../Buttons/BasicButton'
 import CheckboxLabels from '../../Checkbox/CheckboxLabels'
 import logo from '../../../../assets/logos/logo-fractus-cor.svg'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function CardModel(props: TypeAccept): JSX.Element {
     const title = props.header.title
