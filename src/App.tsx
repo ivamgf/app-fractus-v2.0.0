@@ -29,9 +29,7 @@ function App() {
 
     return (
         <div className="App">
-            <Header />
             <RoutesModule />
-            <Footer />
         </div>
     )
 }

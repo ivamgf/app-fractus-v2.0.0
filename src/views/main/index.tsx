@@ -2,14 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 import logo from '../../assets/logos/logo-fractus-cor.svg'
 import './main.css'
-import { redirectAccept } from '../../utils/redirects'
+import { redirect } from '../../utils/redirects'
+import HeaderInit from '../../components/nav/header/headerInit'
+import Footer from '../../components/nav/footer/footer'
 
 export default function MainIntro() {
 
-  redirectAccept();
+  redirect();
 
   return (
       <>
+        <HeaderInit />
         <div className='container'>
           <Main className='main'>
             <p>Aprendendo Frações com Fractus!</p>
@@ -31,6 +34,7 @@ export default function MainIntro() {
             <p>App Versão 2.0.0</p>
           </Main>
         </div>
+        <Footer />
       </>
   )
 }
