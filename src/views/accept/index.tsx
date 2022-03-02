@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import DataAccept from '../../data/jsons/dataAccept'
 import Card from '../../components/mui/Cards/Card'
+import ModelTrans from '../../components/mui/Models'
+import HeaderInit from '../../components/nav/header/headerInit'
+import Footer from '../../components/nav/footer/footer'
 
 export default function Accept() {
   const header = DataAccept.header
@@ -11,8 +14,11 @@ export default function Accept() {
   return (
       <>
           <Main>
+            <HeaderInit />
             <Card header={header} buttons={buttons} checkBox={checkBox} />
+            <ModelTrans />
           </Main>
+          <Footer />
       </>
   )
 }
