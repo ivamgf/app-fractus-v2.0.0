@@ -12,8 +12,7 @@ const dataModels = {
           title: '',
           description: '',
           imageUrl: '',
-          credits: '',
-
+          credits: ''
       },
       contentText: {
           title1: '',
