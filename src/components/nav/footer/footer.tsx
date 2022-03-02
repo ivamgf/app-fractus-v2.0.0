@@ -9,6 +9,7 @@ import PolicyIcon from '@mui/icons-material/Policy'
 import PublicIcon from '@mui/icons-material/Public'
 import ContactsIcon from '@mui/icons-material/Contacts'
 import Cookies from 'universal-cookie'
+import FooterDesktop from "../footerDesktop";
 
 /*eslint-disable */
 export default function FooterComponent() {
@@ -22,6 +23,8 @@ export default function FooterComponent() {
 
     return (
         <>
+            <FooterDesktop />
+
             <Footer>
                 {termState && (
                     <Stack
@@ -56,12 +59,17 @@ export default function FooterComponent() {
 }
 
 const Footer = styled.div`
-    background-color: #249dd9;
-    width: 100%;
-    padding: 2em;
-    text-align: center;
-    color: #ffffff;
-    font-weight: bold;
-    height: 10em;
+
+    @media screen and (min-width: 481px) {
+      display: none;
+    }
+    @media screen and (max-width: 480px) {
+      display: block;
+      background-color: #249dd9;
+      padding: 2em;
+      text-align: center;
+      color: #ffffff;
+      font-weight: bold;
+    }
 `
 /*eslint-disable */

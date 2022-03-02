@@ -6,8 +6,6 @@ export default function Image(props: any) {
   const text = `${props.alt}`
 
   return (
-    <div>
-      <img src={pathImage} alt={text} />
-    </div>
+    <img src={pathImage} alt={text} width="327em" />
   );
 }

@@ -40,5 +40,5 @@ export default function MainIntro() {
 }
 
 const Main = styled.div`
-    margin: 2em 1em;
+    margin: 1em 1em;
 `
