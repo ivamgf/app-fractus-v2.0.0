@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Header from '../../components/nav/header/header'
-import Footer from '../../components/nav/footer/footer'
+import Footer from '../../components/nav/Footer/footer'
 import Image from '../../components/lib/Image'
 import ImagePizza from '../../data/jsons/imagePizza'
 import logo from '../../assets/logos/logo-fractus-cor.svg'
@@ -51,5 +51,5 @@ export default function Home() {
 }
 
 const Main = styled.div`
-    margin: 0em 0em;
+    margin: 0.5em 0.5em;
 `

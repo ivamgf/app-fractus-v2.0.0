@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import DataTerms from '../../data/jsons/dataTerms'
 import CardTerms from '../../components/mui/Cards/CardTerms/'
-import Footer from '../../components/nav/footer/footer'
+import Footer from '../../components/nav/Footer/footer'
 import Header from '../../components/nav/header/header'
 import BasicBreadcrumbs from '../../components/mui/Breadcrumbs'
 

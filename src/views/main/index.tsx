@@ -4,7 +4,7 @@ import logo from '../../assets/logos/logo-fractus-cor.svg'
 import './main.css'
 import { redirect } from '../../utils/redirects'
 import HeaderInit from '../../components/nav/header/headerInit'
-import Footer from '../../components/nav/footer/footer'
+import Footer from '../../components/nav/Footer/footer'
 
 export default function MainIntro() {
 
