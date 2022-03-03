@@ -62,7 +62,7 @@ export default function CardModel(props: TypeAccept): JSX.Element {
               </CardContent>
               <CardActions>
                   <CheckboxLabels value={checkedValue} label={checkBox.label} checkedState={checkedState} onClick={handleClick} />
-                  <Link to="/terms" style={{textDecoration: 'none'}}>
+                  <Link to="/views/terms/terms" style={{textDecoration: 'none'}}>
                     <TermsButton value={buttonLink.value} variant={buttonLink.variant} color={buttonLink.color} disabled={buttonLink.disabled} />
                   </Link>
 

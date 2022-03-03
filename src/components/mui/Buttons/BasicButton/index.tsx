@@ -8,14 +8,12 @@ export default function ButtonModel(props: any): JSX.Element {
     const variant = props.variant
     const color = props.color
     const disabled = props.disabled
-    console.log(disabled)
-    console.log(color)
 
     return (
         <Stack style={{ marginTop: '0.5em' }}>
             <Button
                 variant={variant}
-                style={{color}}
+                style={{backgroundColor: '#249DD9'}}
                 disabled={disabled}
             >
                 {value}

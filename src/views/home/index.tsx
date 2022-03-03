@@ -6,14 +6,18 @@ import Image from '../../components/lib/Image'
 import ImagePizza from '../../data/jsons/imagePizza'
 import logo from '../../assets/logos/logo-fractus-cor.svg'
 import { Card, CardContent, Divider, Typography } from '@mui/material'
+import BasicBreadcrumbs from '../../components/mui/Breadcrumbs'
+import contentHome from '../../data/jsons/contentHome'
 
 export default function Home() {
   const imageProps = ImagePizza
+  const routes = contentHome.children.routes
 
   return (
       <>
       <Header />
           <Main>
+            <BasicBreadcrumbs routes={routes} />
             <Card sx={{ minWidth: 220, margin: '1em 1em' }}>
               <CardContent>
                 <Typography variant="body2" style={{ textAlign: 'center' }}>

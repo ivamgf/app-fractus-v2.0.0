@@ -15,7 +15,7 @@ export default function BasicBreadcrumbs(props: any): JSX.Element {
         <div role="presentation" onClick={handleClick}>
             <Breadcrumbs
                 aria-label="breadcrumb"
-                style={{ marginBottom: '1em', marginTop: '-3em' }}
+                style={{ marginBottom: '1em', marginTop: '-2em', marginLeft: '1em' }}
             >
                 {routes.route1 && (
                     <Link underline="hover" color="inherit" href="/">

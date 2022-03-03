@@ -4,9 +4,6 @@ import Cookies from 'universal-cookie'
 
 export const redirectHome = async () => {
   const navigate = useNavigate();
-
-
-
   await setTimeout(() => {
     navigate('/home')
   }, 3000)

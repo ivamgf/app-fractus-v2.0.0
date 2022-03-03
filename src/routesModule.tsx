@@ -10,6 +10,7 @@ import Help from './views/help';
 import Home from './views/home';
 import Main from './views/main'
 import Terms from './views/terms';
+import TermsInit from './views/terms/terms';
 import Intro from './views/classes/sumary/intro'
 import Class from './views/classes/sumary/class';
 import Page404 from './views/page404';
@@ -19,16 +20,17 @@ const RoutesModule = () => (
     <Routes>
       <Route path="/" element={<Main />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/about" element={<About />} />
+      <Route path="/views/about" element={<About />} />
       <Route path="/accept" element={<Accept />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/terms" element={<Terms />} />
-      <Route path="/help" element={<Help />} />
-      <Route path="/contents/texts" element={<Texts />} />
-      <Route path="/contents/exercises" element={<Exercises />} />
-      <Route path="/classes" element={<Classes />} />
-      <Route path="/classes/sumary/intro" element={<Intro />} />
-      <Route path="/classes/sumary/class" element={<Class />} />
+      <Route path="/views/contact" element={<Contact />} />
+      <Route path="/views/terms" element={<Terms />} />
+      <Route path="/views/terms/terms" element={<TermsInit />} />
+      <Route path="/views/help" element={<Help />} />
+      <Route path="/views/contents/texts" element={<Texts />} />
+      <Route path="/views/contents/exercises" element={<Exercises />} />
+      <Route path="/views/classes" element={<Classes />} />
+      <Route path="/views/classes/sumary/intro" element={<Intro />} />
+      <Route path="/views/classes/sumary/class" element={<Class />} />
       <Route path="*" element={<Page404 />} />
     </Routes>
   </Router>

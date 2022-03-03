@@ -9,12 +9,10 @@ import BasicButton from '../../Buttons/BasicButton'
 import logo from '../../../../assets/logos/logo-32x32.png'
 import BasicAccordian from '../../../mui/Accordians/BasicAccordian'
 
-export default function CardAccordian(props: TypeAccordian): JSX.Element {
+export default function CardAccordian(props: any): JSX.Element {
     const title = props.header.title
     const contentText = props.contentText
     const buttonPrev = props.buttons.buttonPrev
-    console.log(buttonPrev.color)
-    const color=`"${buttonPrev.color}"`
 
     return (
         <>
@@ -37,7 +35,7 @@ export default function CardAccordian(props: TypeAccordian): JSX.Element {
               </CardContent>
               <hr style={{marginBottom: '-0.5em'}} />
               <CardActions >
-                  <Link to="/accept" style={{textDecoration: 'none'}}>
+                  <Link to="/home" style={{textDecoration: 'none'}}>
                     <BasicButton value={buttonPrev.value} variant="contained" style={{backgroundColor: '#249DD9'}} />
                   </Link>
               </CardActions>

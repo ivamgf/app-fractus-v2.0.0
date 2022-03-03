@@ -133,7 +133,7 @@ export default function PersistentDrawerLeft() {
                 <Divider />
 
                 <List>
-                    <Link to="/views/home/" style={{textDecoration: 'none'}}>
+                    <Link to="/home/" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <HomeIcon style={{ color: '#249DD9' }} />
@@ -146,7 +146,7 @@ export default function PersistentDrawerLeft() {
                 </List>
 
                 <List>
-                    <Link to="/views/about/" style={{textDecoration: 'none'}}>
+                    <Link to="/views/about" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <InfoIcon style={{ color: '#249DD9' }} />
@@ -159,7 +159,7 @@ export default function PersistentDrawerLeft() {
                 </List>
 
                 <List>
-                    <Link to="/views/terms/" style={{textDecoration: 'none'}}>
+                    <Link to="/views/terms" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <PolicyIcon style={{ color: '#249DD9' }} />
