@@ -18,7 +18,7 @@ type TypeAccept = {
   buttons: {
     buttonAdvance: {
       value: string,
-      variant: string,
+      variant?: string,
       color: string,
       disabled?: boolean,
       onClick?: React.MouseEventHandler<HTMLButtonElement>
