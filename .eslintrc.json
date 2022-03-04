@@ -3,6 +3,11 @@
         "browser": true,
         "es2021": true
     },
+    "settings": {
+      "react": {
+        "version": "^17.0.2"
+      }
+    },
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
@@ -10,6 +15,7 @@
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
+      "project": "./tsconfig.json",
         "ecmaFeatures": {
             "jsx": true
         },
