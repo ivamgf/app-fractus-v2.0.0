@@ -7,6 +7,8 @@
         "build": "react-scripts build",
         "test": "jest --env=jsdom",
         "test:watch": "jest --watchAll",
+        "lint": "eslint .",
+        "lint:fix": "eslint --fix --ext .ts,.tsx .",
         "eject": "react-scripts eject",
         "prepare": "husky install",
         "precommit": "npm run test",

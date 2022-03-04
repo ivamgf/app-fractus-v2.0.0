@@ -5,6 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import Typography from '@mui/material/Typography'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Image from '../../../lib/Image'
+import { Link } from 'react-router-dom'
 
 export default function AccordionText(props: any): JSX.Element {
     const contentText1 = props.text1
@@ -73,12 +74,19 @@ export default function AccordionText(props: any): JSX.Element {
                         <Image src={pathImg3} alt={altText} width={width} />
 
                         <Typography variant="body2" style={{ textAlign: 'center', marginBottom: '1em', fontWeight: 'bold' }}>{content1Item3.titleItem3}</Typography>
+                        
                         <Typography variant="body2" style={{ textAlign: 'center', marginBottom: '1em' }}>{content1Item3.textItem3}</Typography>
                         <Image src={pathImg4} alt={altText} width='30%' />
 
                         <Typography variant="body2" style={{ textAlign: 'center', marginBottom: '1em', fontWeight: 'bold' }}>{content1Item4.titleItem4}</Typography>
+
                         <Typography variant="body2" style={{ textAlign: 'center', marginBottom: '1em' }}>{content1Item4.textItem4}</Typography>
                         <Image src={pathImg5} alt={altText} width='20%' />
+
+                        <Typography variant="body2" style={{ textAlign: 'center', marginBottom: '1em' }}>
+                          <a href="http://app-fractus.orkneytech.com.br/texts/texto1.pdf" style={{textDecoration: 'none', color: '#fff'}}>Baixar o Texto 1</a>
+                        </Typography>
+
                     </AccordionDetails>
                 </Accordion>
 
