@@ -6,7 +6,8 @@ import Typography from '@mui/material/Typography'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Image from '../../../lib/Image'
 
-export default function AccordionText(props: TypeText): JSX.Element {
+/*eslint-disable */
+export default function AccordionText(props: any): JSX.Element {
     const contentText1 = props.text1
     const contentText2 = props.text2
     const content1 = contentText1.content1
@@ -163,3 +164,4 @@ export default function AccordionText(props: TypeText): JSX.Element {
         </>
     )
 }
+/*eslint-disable */

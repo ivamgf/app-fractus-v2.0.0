@@ -3,7 +3,6 @@ type TypeCardText = {
   content: {
     title: string
   },
-  text2: string,
   texts: {
     text1: {
       title1: string;
