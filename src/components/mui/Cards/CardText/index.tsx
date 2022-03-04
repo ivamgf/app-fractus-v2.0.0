@@ -9,7 +9,7 @@ import logo from '../../../../assets/logos/logo-32x32.png'
 import { Button, Divider } from '@mui/material'
 import AccordianText from '../../Accordians/AccordianText'
 
-export default function CardText(props: any) {
+export default function CardText(props: TypeCardText) {
   const title = props.content.title
   const text1 = props.texts.text1
   const text2 = props.texts.text2

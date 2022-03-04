@@ -1,20 +1,7 @@
 
-
-// Type Accordian
-
-type TypeAccordian = {
+type TypeCardTerms = {
   header: {
-    title: string,
-    subTitle: string,
-    description: string,
-    meta: string,
-    image: string
-  },
-  content?: {
-    title: string,
-    description: string,
-    imageUrl: string,
-    credits: string
+    title: string
   },
   contentText: {
     title1: string,
@@ -38,12 +25,7 @@ type TypeAccordian = {
   },
   buttons: {
     buttonPrev: {
-      value: string,
-      variant: string,
-      color: string,
-      disabled?: boolean,
-      onClick?: React.MouseEventHandler<HTMLButtonElement>,
-      style?: string
+      value: string
     }
   }
 }

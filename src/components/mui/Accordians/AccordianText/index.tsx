@@ -5,9 +5,8 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import Typography from '@mui/material/Typography'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Image from '../../../lib/Image'
-import { Link } from 'react-router-dom'
 
-export default function AccordionText(props: any): JSX.Element {
+export default function AccordionText(props: TypeText): JSX.Element {
     const contentText1 = props.text1
     const contentText2 = props.text2
     const content1 = contentText1.content1
@@ -74,7 +73,7 @@ export default function AccordionText(props: any): JSX.Element {
                         <Image src={pathImg3} alt={altText} width={width} />
 
                         <Typography variant="body2" style={{ textAlign: 'center', marginBottom: '1em', fontWeight: 'bold' }}>{content1Item3.titleItem3}</Typography>
-                        
+
                         <Typography variant="body2" style={{ textAlign: 'center', marginBottom: '1em' }}>{content1Item3.textItem3}</Typography>
                         <Image src={pathImg4} alt={altText} width='30%' />
 

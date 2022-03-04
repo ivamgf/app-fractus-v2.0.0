@@ -8,7 +8,7 @@ import logo from '../../../../assets/logos/logo-32x32.png'
 import { Button, Divider } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export default function About(props: any) {
+export default function About(props: TypeCardAbout) {
   const title = props.content.title
   const text = props.content.text
   const credits = props.content.credits

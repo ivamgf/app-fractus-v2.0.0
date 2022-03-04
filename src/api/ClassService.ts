@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from "react"
 
 import { ApiService } from './ApiService'
@@ -10,3 +11,4 @@ export const TodoService = {
 function endpoint(endpoint: any) {
     throw new Error('Function not implemented.')
 }
+/*eslint-disable */

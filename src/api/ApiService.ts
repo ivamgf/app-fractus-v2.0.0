@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from "react"
 
 const url = ''
@@ -8,3 +9,4 @@ export const ApiService = {
         return await response.json()
     },
 }
+/*eslint-disable */
