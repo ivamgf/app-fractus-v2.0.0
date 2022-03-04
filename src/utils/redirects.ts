@@ -1,4 +1,7 @@
+/*eslint-disable */
 import React from "react";
+/*eslint-disable */
+
 import { useNavigate } from "react-router-dom"
 import Cookies from 'universal-cookie'
 

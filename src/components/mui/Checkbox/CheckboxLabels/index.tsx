@@ -4,7 +4,7 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 import { Stack } from '@mui/material'
 
-export default function CheckboxLabels(props: any) {
+export default function CheckboxLabels(props: TypeCheckbox) {
     const checkedState = props.checkedState
     const label = props.label
     const value = props.value

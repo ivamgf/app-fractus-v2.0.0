@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import Typography from '@mui/material/Typography'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
-export default function BasicAccordion(props: any): JSX.Element {
+export default function BasicAccordion(props: TypeBasicAccordian): JSX.Element {
     const contentText = props.contentText
 
     return (

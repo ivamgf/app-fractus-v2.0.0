@@ -3,7 +3,11 @@ import Button from '@mui/material/Button'
 import ClearIcon from '@mui/icons-material/Clear'
 import Stack from '@mui/material/Stack'
 
-export default function IconLabelButtons(props: any): JSX.Element {
+type TypeIconButton = {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
+}
+
+export default function IconLabelButtons(props: TypeIconButton): JSX.Element {
     return (
         <Stack direction="row" spacing={2}>
             <Button

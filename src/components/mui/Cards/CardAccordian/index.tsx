@@ -36,7 +36,7 @@ export default function CardAccordian(props: TypeAccordian): JSX.Element {
               <hr style={{marginBottom: '-0.5em'}} />
               <CardActions >
                   <Link to="/accept" style={{textDecoration: 'none'}}>
-                    <BasicButton value={buttonPrev.value} variant="contained" style={{backgroundColor: '#249DD9'}} />
+                    <BasicButton value={buttonPrev.value} />
                   </Link>
               </CardActions>
           </Card>
