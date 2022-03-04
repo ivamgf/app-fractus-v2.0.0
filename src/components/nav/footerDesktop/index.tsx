@@ -10,11 +10,11 @@ import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom'
 
 const FooterDesktop = () => {
-    const homeLink = '/dash/home/'
-    const aboutLink = '/dash/about/'
-    const termsLink = '/dash/terms/'
+    const homeLink = '/home/'
+    const aboutLink = '/views/about/'
+    const termsLink = '/views/terms/'
     const urlLink = 'https://fractus.orkneytech.com.br/'
-    const contactLink = '/dash/contacts/'
+    const contactLink = '/views/contacts/'
 
     return (
         <div>

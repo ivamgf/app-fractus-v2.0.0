@@ -133,7 +133,7 @@ export default function PersistentDrawerLeft() {
                 <Divider />
 
                 <List>
-                    <Link to="/views/home/" style={{textDecoration: 'none'}}>
+                    <Link to="/home/" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <HomeIcon style={{ color: '#249DD9' }} />
@@ -146,7 +146,7 @@ export default function PersistentDrawerLeft() {
                 </List>
 
                 <List>
-                    <Link to="/views/about/" style={{textDecoration: 'none'}}>
+                    <Link to="/views/about" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <InfoIcon style={{ color: '#249DD9' }} />
@@ -159,7 +159,7 @@ export default function PersistentDrawerLeft() {
                 </List>
 
                 <List>
-                    <Link to="/views/terms/" style={{textDecoration: 'none'}}>
+                    <Link to="/views/terms" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <PolicyIcon style={{ color: '#249DD9' }} />
@@ -174,7 +174,7 @@ export default function PersistentDrawerLeft() {
                 <Divider />
 
                 <List>
-                    <Link to="/classes/class/" style={{textDecoration: 'none'}}>
+                    <Link to="/views/classes/class/" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <ClassIcon style={{ color: '#249DD9' }} />
@@ -187,7 +187,7 @@ export default function PersistentDrawerLeft() {
                 </List>
 
                 <List>
-                    <Link to="/contents/texts" style={{textDecoration: 'none'}}>
+                    <Link to="/views/contents/texts" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <InboxIcon style={{ color: '#249DD9' }} />
@@ -200,7 +200,7 @@ export default function PersistentDrawerLeft() {
                 </List>
 
                 <List>
-                    <Link to="/contents/exercises" style={{textDecoration: 'none'}}>
+                    <Link to="/views/contents/exercises" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <QuizIcon style={{ color: '#249DD9' }} />
