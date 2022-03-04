@@ -1,4 +1,5 @@
 import React from 'react'
+
 import styled from 'styled-components'
 import logo from '../../assets/logos/logo-fractus-cor.svg'
 import './main.css'

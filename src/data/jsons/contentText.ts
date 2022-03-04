@@ -1,14 +1,14 @@
 
 const contentText = {
   content: {
-    title: 'Contatos',
+    title: 'Textos',
     Image: '',
     description: '',
   },
   children: {
       routes: {
           route1: 'Início',
-          route2: 'Ajuda',
+          route2: 'Textos',
           route3: '',
           routeUrl: '/favicon.ico',
       },
@@ -22,7 +22,7 @@ const contentText = {
           content1: {
             definition: 'Uma fração representa a razão entre dois números inteiros.',
             example1: 'Exemplos:',
-            subtitle1: 'Tipos de Frações',
+            subTitle1: 'Tipos de Frações',
             description1: 'São quatro tipos de frações que iremos abordar em nossos estudos, as frações próprias, impróprias, aparentes e mistas.',
             item1: {
               titleItem1: 'Frações Próprias',
@@ -51,7 +51,7 @@ const contentText = {
           content2: {
             definition: 'Operações com frações.',
             example1: '',
-            subtitle1: '',
+            subTitle1: '',
             description1: 'São quatro tipos de operações com frações.',
             item1: {
               titleItem1: 'Adição',

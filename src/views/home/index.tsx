@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import Header from '../../components/nav/header/header'
 import Footer from '../../components/nav/Footer/footer'
 import Image from '../../components/lib/Image'
@@ -34,7 +35,7 @@ export default function Home() {
 
               </CardContent>
 
-              <Image src={imageProps.path} alt={imageProps.alt} />
+              <Image src={imageProps.path} alt={imageProps.alt} width={imageProps.width} />
 
               <CardContent>
                 <Typography variant="body2" style={{ textAlign: 'center', marginTop: '1em' }}>

@@ -13,8 +13,6 @@ export default function CardAccordian(props: TypeAccordian): JSX.Element {
     const title = props.header.title
     const contentText = props.contentText
     const buttonPrev = props.buttons.buttonPrev
-    console.log(buttonPrev.color)
-    const color=`"${buttonPrev.color}"`
 
     return (
         <>
