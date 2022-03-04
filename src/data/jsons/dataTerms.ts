@@ -61,6 +61,12 @@ const dataTerms = {
         title9: '9.Item IV',
         text9: `IV. O Lamid isenta-se de qualquer responsabilidade direta ou indireta sobre estes conteúdos e o acesso é facultativo ao usuário.`,
       },
+      routes: {
+        route1: 'Início',
+        route2: 'Termos',
+        route3: '',
+        routeUrl: '/favicon.ico',
+      },
       buttons: {
         buttonPrev: {
             value: 'Voltar',

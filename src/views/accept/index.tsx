@@ -4,7 +4,7 @@ import DataAccept from '../../data/jsons/dataAccept'
 import Card from '../../components/mui/Cards/Card'
 import ModelTrans from '../../components/mui/Models'
 import HeaderInit from '../../components/nav/header/headerInit'
-import Footer from '../../components/nav/footer/footer'
+import Footer from '../../components/nav/Footer/footer'
 
 export default function Accept() {
   const header = DataAccept.header
