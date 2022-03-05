@@ -1,15 +1,17 @@
 import React from "react";
 
 import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { Button, Divider, Stack } from '@mui/material'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function CardClass() {
+  const params = useParams()
+  const id = params.id
+
   return (
     <>
       <Card sx={{minWidth: 275, margin: '1em 1em'}}>
@@ -31,7 +33,7 @@ export default function CardClass() {
         <Divider />
 
           <Stack direction='row' spacing={3}>
-            <Link to={''} style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
+            <Link to={`/views/classes/sumary/intro/${id}`} style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
               <Button variant="contained" style={{backgroundColor: '#249DD9'}}>
                 <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
               </Button>

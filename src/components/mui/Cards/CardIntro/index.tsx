@@ -69,7 +69,7 @@ export default function CardIntro(props: TypeIntro) {
               <Button variant="text" style={{color: '#249DD9', marginTop: '0.2em'}} fullWidth={true}>Voltar</Button>
             </Link>
 
-            <Link to={"/views/classes/sumary/class"} style={{textDecoration: 'none'}}>
+            <Link to={`/views/classes/sumary/class/${id}`} style={{textDecoration: 'none'}}>
               <Button variant="text" style={{color: '#249DD9', marginTop: '0.2em'}} fullWidth={true}>Entrar</Button>
             </Link>
           </Stack>
