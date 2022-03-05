@@ -29,27 +29,27 @@ export default function CardClasses(props: TypeClasses) {
             </span>
           </Typography>
 
-          <Link to="/views/classes/sumary/intro" style={{textDecoration: 'none', marginTop: '0.5em'}}>
+          <Link to="/views/classes/sumary/intro/1" style={{textDecoration: 'none', marginTop: '0.5em'}}>
               <Button variant="contained" style={{backgroundColor: '#249DD9', marginTop: '0.2em'}} fullWidth={true}>{classes.class1}</Button>
           </Link>
 
-          <Link to="/views/classes/sumary/intro" style={{textDecoration: 'none', marginTop: '0.5em'}}>
+          <Link to="/views/classes/sumary/intro/2" style={{textDecoration: 'none', marginTop: '0.5em'}}>
             <Button variant="contained" style={{backgroundColor: '#249DD9', marginTop: '0.2em'}} fullWidth={true}>{classes.class2}</Button>
           </Link>
 
-          <Link to="/views/classes/sumary/intro" style={{textDecoration: 'none', marginTop: '0.5em'}}>
+          <Link to="/views/classes/sumary/intro/3" style={{textDecoration: 'none', marginTop: '0.5em'}}>
             <Button variant="contained" style={{backgroundColor: '#249DD9', marginTop: '0.2em'}} fullWidth={true}>{classes.class3}</Button>
           </Link>
 
-          <Link to="/views/classes/sumary/intro" style={{textDecoration: 'none', marginTop: '0.5em'}}>
+          <Link to="/views/classes/sumary/intro/4" style={{textDecoration: 'none', marginTop: '0.5em'}}>
             <Button variant="contained" style={{backgroundColor: '#249DD9', marginTop: '0.2em'}} fullWidth={true}>{classes.class4}</Button>
           </Link>
 
-          <Link to="/views/classes/sumary/intro" style={{textDecoration: 'none', marginTop: '0.5em'}}>
+          <Link to="/views/classes/sumary/intro/5" style={{textDecoration: 'none', marginTop: '0.5em'}}>
             <Button variant="contained" style={{backgroundColor: '#249DD9', marginTop: '0.2em'}} fullWidth={true}>{classes.class5}</Button>
           </Link>
 
-          <Link to="/views/classes/sumary/intro" style={{textDecoration: 'none', marginTop: '0.5em'}}>
+          <Link to="/views/classes/sumary/intro/6" style={{textDecoration: 'none', marginTop: '0.5em'}}>
             <Button variant="contained" style={{backgroundColor: '#249DD9', marginTop: '0.2em'}} fullWidth={true}>{classes.class6}</Button>
           </Link>
         </CardContent>

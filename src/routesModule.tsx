@@ -29,7 +29,7 @@ const RoutesModule = () => (
       <Route path="/views/contents/texts" element={<Texts />} />
       <Route path="/views/contents/exercises" element={<Exercises />} />
       <Route path="/views/classes" element={<Classes />} />
-      <Route path="/views/classes/sumary/intro" element={<Intro />} />
+      <Route path="/views/classes/sumary/intro/:id" element={<Intro />} />
       <Route path="/views/classes/sumary/class" element={<Class />} />
       <Route path="*" element={<Page404 />} />
     </Routes>

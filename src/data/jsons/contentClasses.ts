@@ -17,7 +17,7 @@ const contentClasses = {
       route2: 'Aulas',
       route3: '',
       routeUrl: '/favicon.ico',
-    },
+    }
   }
 }
 
