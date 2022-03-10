@@ -93,6 +93,7 @@ const FooterComponentDesktop = styled.div`
         text-align: center;
         color: #ffffff;
         font-weight: bold;
+        margin-top: 15em;
     }
     @media screen and (max-width: 481px) {
         display: none;

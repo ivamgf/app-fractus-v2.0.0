@@ -34,7 +34,7 @@ const contentHelp = {
             route1: 'Início',
             route2: 'Ajuda',
             route3: '',
-            routeUrl: '/favicon.ico',
+            routeUrl: '/',
         },
         buttons: {
             value: 'Voltar',

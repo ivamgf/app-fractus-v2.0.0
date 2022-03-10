@@ -10,7 +10,7 @@ const contentText = {
           route1: 'Início',
           route2: 'Textos',
           route3: '',
-          routeUrl: '/favicon.ico',
+          routeUrl: '/',
       },
       buttons: {
         value: 'Voltar',

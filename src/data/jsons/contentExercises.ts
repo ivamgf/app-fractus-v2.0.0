@@ -10,7 +10,7 @@ const contentExercises = {
           route1: 'Início',
           route2: 'Exercícios',
           route3: '',
-          routeUrl: '/favicon.ico',
+          routeUrl: '/',
       },
       lists: {
         list1: 'Exercícios 1'

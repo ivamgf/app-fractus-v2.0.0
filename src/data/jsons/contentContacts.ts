@@ -9,7 +9,7 @@ const contentContacts = {
             route1: 'Início',
             route2: 'Contatos',
             route3: '',
-            routeUrl: '/favicon.ico',
+            routeUrl: '/',
         }
     }
 }

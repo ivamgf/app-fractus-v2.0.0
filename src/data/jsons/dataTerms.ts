@@ -65,7 +65,7 @@ const dataTerms = {
         route1: 'Início',
         route2: 'Termos',
         route3: '',
-        routeUrl: '/favicon.ico',
+        routeUrl: '/',
       },
       buttons: {
         buttonPrev: {

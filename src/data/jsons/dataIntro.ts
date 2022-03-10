@@ -12,7 +12,7 @@ const dataIntro = {
       route1: 'Início',
       route2: 'Aulas',
       route3: 'Sala de Aula',
-      routeUrl: '/favicon.ico'
+      routeUrl: '/views/classes'
     }
   }
 }
