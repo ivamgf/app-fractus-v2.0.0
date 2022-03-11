@@ -1,14 +1,14 @@
 /*eslint-disable */
-import React from "react"
+import React, { useState } from "react"
 
-import { ApiService } from './ApiService'
+import { classesApi } from '../hooks/classesApi'
 
-export const TodoService = {
-    list() {
-        return ApiService.get(endpoint)
-    },
-}
-function endpoint(endpoint: any) {
-    throw new Error('Function not implemented.')
+export function classesService(endpoint: any) {
+  
+  const classes = classesApi(endpoint)
+
+  return {
+    classes
+  }
 }
 /*eslint-disable */

@@ -27,6 +27,7 @@ function initialState() {
 export default function CardContacts(props: TypeContacts) {
   const [values, setValues] = useState(initialState)
   const [open, setOpen] = useState(false)
+  const [error, setError] = useState(false)
   const navigate = useNavigate();
 
   const content = props.content
@@ -49,8 +50,17 @@ export default function CardContacts(props: TypeContacts) {
   const handleSubmit = async (event: any) => {
     event.preventDefault()
     console.log(values)
-    setOpen(true)
-    redirectHome()
+
+    !values.name ? setError(true) : (
+    !values.email ? setError(true) : (
+    !values.subject ? setError(true) : (
+    !values.message ? setError(true) : (
+          setOpen(true),
+          redirectHome()
+          )
+        )
+      )
+    )
   }
 
   return (
@@ -75,6 +85,27 @@ export default function CardContacts(props: TypeContacts) {
               sx={{ mb: 2 }}
             >
               Mensagem Enviada com Sucesso!
+            </Alert>
+            </Collapse>
+
+            <Collapse in={error}>
+            <Alert
+              severity="error"
+              action={
+                <IconButton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                  onClick={() => {
+                    setError(false);
+                  }}
+                >
+                  <CloseIcon fontSize="inherit" />
+                </IconButton>
+              }
+              sx={{ mb: 2 }}
+            >
+              Preencha todos os campos para enviar a mensagem!
             </Alert>
           </Collapse>
 
