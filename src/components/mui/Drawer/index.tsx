@@ -174,7 +174,7 @@ export default function PersistentDrawerLeft() {
                 <Divider />
 
                 <List>
-                    <Link to="/views/classes/class/" style={{textDecoration: 'none'}}>
+                    <Link to="/views/classes/" style={{textDecoration: 'none'}}>
                         <ListItem>
                             <ListItemIcon>
                                 <ClassIcon style={{ color: '#249DD9' }} />

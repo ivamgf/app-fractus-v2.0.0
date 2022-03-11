@@ -88,11 +88,12 @@ const FooterComponentDesktop = styled.div`
 
     @media screen and (min-width: 481px) {
         background-color: #249dd9;
-        min-height: 10em;
+        min-height: 15em;
         padding: 2em;
         text-align: center;
         color: #ffffff;
         font-weight: bold;
+        margin-top: 15em;
     }
     @media screen and (max-width: 481px) {
         display: none;

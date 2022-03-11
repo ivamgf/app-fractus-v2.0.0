@@ -5,11 +5,11 @@ import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
-import BasicButton from '../../Buttons/BasicButton'
 import logo from '../../../../assets/logos/logo-32x32.png'
 import BasicAccordian from '../../../mui/Accordians/BasicAccordian'
+import { Button, Divider } from '@mui/material'
 
-export default function CardAccordian(props: any): JSX.Element {
+export default function CardTerms(props: TypeCardTerms) {
     const title = props.header.title
     const contentText = props.contentText
     const buttonPrev = props.buttons.buttonPrev
@@ -33,10 +33,12 @@ export default function CardAccordian(props: any): JSX.Element {
                 <BasicAccordian contentText={contentText}/>
 
               </CardContent>
-              <hr style={{marginBottom: '-0.5em'}} />
+
+              <Divider />
+              
               <CardActions >
                   <Link to="/home" style={{textDecoration: 'none'}}>
-                    <BasicButton value={buttonPrev.value} variant="contained" style={{backgroundColor: '#249DD9'}} />
+                    <Button value={buttonPrev.value} variant="contained" style={{backgroundColor: '#249DD9'}}>Voltar</Button>
                   </Link>
               </CardActions>
           </Card>

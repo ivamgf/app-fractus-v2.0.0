@@ -8,7 +8,7 @@ function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     console.info('Você clicou no Breadcrumb.')
 }
 
-export default function BasicBreadcrumbs(props: any): JSX.Element {
+export default function BasicBreadcrumbs(props: TypeRoutes): JSX.Element {
     const { routes } = props
 
     return (
@@ -33,7 +33,7 @@ export default function BasicBreadcrumbs(props: any): JSX.Element {
                     </Link>
                 )}
                 {routes.route3 && (
-                    <Typography color="text.primary">
+                    <Typography color="inherit">
                         {routes.route3}
                     </Typography>
                 )}

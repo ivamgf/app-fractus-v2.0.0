@@ -42,7 +42,8 @@ type TypeAccordian = {
       variant: string,
       color: string,
       disabled?: boolean,
-      onClick?: React.MouseEventHandler<HTMLButtonElement>
+      onClick?: React.MouseEventHandler<HTMLButtonElement>,
+      style?: string
     }
   }
 }

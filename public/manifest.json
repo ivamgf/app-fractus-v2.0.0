@@ -5,7 +5,8 @@
         {
             "src": "favicon.ico",
             "sizes": "48x48",
-            "type": "image/x-icon"
+            "type": "image/x-icon",
+            "purpose": "any maskable"
         },
         {
             "src": "logo48.png",
@@ -21,16 +22,6 @@
             "src": "logo512.png",
             "type": "image/png",
             "sizes": "512x512"
-        },
-        {
-            "src": "assets/logos/logo-fractus-cor.svg",
-            "sizes": "288x150",
-            "type": "image/svg"
-        },
-        {
-            "src": "assets/logos/logo-orkneytech.svg",
-            "sizes": "567x436",
-            "type": "image/svg"
         }
     ],
     "start_url": ".",
@@ -39,6 +30,10 @@
     "background_color": "#ffffff",
     "prefer_related_applications": true,
     "related_applications": [
+        {
+          "platform": "web",
+          "url": "/localhost:3000"
+        },
         {
             "platform": "play",
             "id": "com.google.samples.apps.iosched"

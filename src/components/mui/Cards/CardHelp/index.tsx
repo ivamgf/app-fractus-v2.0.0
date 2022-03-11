@@ -9,7 +9,33 @@ import logo from '../../../../assets/logos/logo-32x32.png'
 import BasicAccordian from '../../../mui/Accordians/BasicAccordian'
 import { Button } from '@mui/material'
 
-export default function CardAccordian(props: any) {
+type TypeCardAccordian = {
+  content: {
+    title: string
+  },
+  help: {
+    title1: string,
+    text1: string,
+    title2: string,
+    text2: string,
+    title3: string,
+    text3: string,
+    title4: string,
+    text4: string,
+    title5: string,
+    text5: string,
+    title6: string,
+    text6: string,
+    title7: string,
+    text7: string,
+    title8: string,
+    text8: string,
+    title9: string,
+    text9: string
+  }
+}
+
+export default function CardAccordian(props: TypeCardAccordian) {
   const title = props.content.title
   const contentText = props.help
 

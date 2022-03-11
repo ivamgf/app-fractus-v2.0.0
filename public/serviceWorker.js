@@ -20,11 +20,23 @@ const RUNTIME = 'runtime'
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
     // 'path_do_seu_arquivo_cache.css'
+    'App.css',
+    'index.css',
+    'index.tsx',
+    'App.tsx',
+    'logo48.png',
+    'logo192.png',
+    'logo512.png',
+    'index.html',
+    '/static/*'
     //   './', // Alias for index.html
     //   'styles.css',
     //   '../../styles/main.css',
     //   'demo.js'
 ]
+
+// Fetch event
+self.addEventListener('fetch',() => console.log("fetch"));
 
 // The install handler takes care of precaching the resources we always need.
 self.addEventListener('install', (event) => {

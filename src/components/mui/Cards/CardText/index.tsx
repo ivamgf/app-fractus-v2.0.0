@@ -9,9 +9,11 @@ import logo from '../../../../assets/logos/logo-32x32.png'
 import { Button, Divider } from '@mui/material'
 import AccordianText from '../../Accordians/AccordianText'
 
+/*eslint-disable */
 export default function CardText(props: any) {
   const title = props.content.title
-  const text1 = props.texts.text1
+  const texts = props.texts
+  const text1 = texts.text1
   const text2 = props.texts.text2
 
   return (
@@ -45,4 +47,4 @@ export default function CardText(props: any) {
     </>
   );
 }
-
+/*eslint-disable */

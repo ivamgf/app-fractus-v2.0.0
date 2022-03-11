@@ -13,6 +13,7 @@ import logo from '../../../../assets/logos/logo-fractus-cor.svg'
 import Cookies from 'universal-cookie'
 import { useState } from 'react'
 
+/*eslint-disable */
 export default function CardModel(props: TypeAccept): JSX.Element {
     const title = props.header.title
     const checkBox = props.checkBox
@@ -63,17 +64,16 @@ export default function CardModel(props: TypeAccept): JSX.Element {
               <CardActions>
                   <CheckboxLabels value={checkedValue} label={checkBox.label} checkedState={checkedState} onClick={handleClick} />
                   <Link to="/views/terms/terms" style={{textDecoration: 'none'}}>
-                    <TermsButton value={buttonLink.value} variant={buttonLink.variant} color={buttonLink.color} disabled={buttonLink.disabled} />
+                    <TermsButton value={buttonLink.value} color={buttonLink.color} disabled={buttonLink.disabled} />
                   </Link>
 
               </CardActions>
           </Card>
           <Link to="/home" style={{textDecoration: 'none'}} onClick={ buttonState ? (event) => event.preventDefault() : undefined }>
-            <BasicButton value={buttonAdvance.value} variant={buttonAdvance.variant} color={buttonColor} disabled={buttonState} />
+            <BasicButton value={buttonAdvance.value} variant={buttonAdvance.variant} disabled={buttonState} />
           </Link>
 
         </>
     )
 }
-
-
+/*eslint-disable */
