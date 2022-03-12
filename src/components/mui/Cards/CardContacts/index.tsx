@@ -68,11 +68,17 @@ export default function CardContacts(props: TypeContacts) {
   }
 
   function sendEmail() {
-    ApiService.post('mailer', {
+    ApiService.post('mailer',
+    {
       name: values.name,
       email: values.email,
       subject: values.subject,
       message: values.message
+    },
+    {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
     })
       .then((response) => console.info("Message sent successfully!"))
       .catch((err) => {
