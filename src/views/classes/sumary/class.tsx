@@ -12,7 +12,7 @@ export default function Class() {
   const routes = dataRoute.routes
   const list = classesControler().list
   console.log('Aulas', list)
-  
+
   return (
       <>
         <Header />

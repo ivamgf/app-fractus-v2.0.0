@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from 'styled-components'
 
@@ -14,6 +14,7 @@ import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import CloseIcon from '@mui/icons-material/Close';
+import { ApiService } from "../../../../api/ApiService";
 
 function initialState() {
   return {
@@ -55,12 +56,28 @@ export default function CardContacts(props: TypeContacts) {
     !values.email ? setError(true) : (
     !values.subject ? setError(true) : (
     !values.message ? setError(true) : (
+
+          sendEmail(),
           setOpen(true),
           redirectHome()
+
           )
         )
       )
     )
+  }
+
+  function sendEmail() {
+    ApiService.post('mailer', {
+      name: values.name,
+      email: values.email,
+      subject: values.subject,
+      message: values.message
+    })
+      .then((response) => console.info("Message sent successfully!"))
+      .catch((err) => {
+        console.error("Error" + err)
+      })
   }
 
   return (
