@@ -6,14 +6,9 @@ import Footer from '../../../components/nav/Footer/footer'
 import BasicBreadcrumbs from '../../../components/mui/Breadcrumbs'
 import dataRoute from '../../../data/jsons/dataRoute'
 import CardClass from '../../../components/mui/Cards/CardClasses/CardClass'
-import classesControler from '../../../controlers/classesControler'
 
 export default function Class() {
   const routes = dataRoute.routes
-  const list = classesControler().list
-  const classList = classesControler().classList
-  console.log('Aulas', list)
-  console.log('classList:', classList)
 
   return (
       <>

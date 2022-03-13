@@ -1,10 +1,15 @@
+import { any } from "prop-types";
 import React from "react";
-import { classesService } from '../../src/api/ClassService'
+import { useParams } from "react-router";
+import { classesService } from '../api/ClassService'
 
 export default function classesControler() {
+  const params = useParams()
+  const id = params.id
+  console.log(id)
   const resp = classesService('classes')
   const list = resp.classes.data
-  const classList = list?.map((item: any) => {
+  const classesList = list?.map((item: any ) => {
       return {
         scene: item.scene,
         class: item.class,
@@ -15,7 +20,10 @@ export default function classesControler() {
     }
   )
 
+  console.log("Aulas", classesList)
+  const classList = classesList?.filter((i: any) => i.class === 1)
+
   return {
-    list, classList
+    classList
   }
 }
