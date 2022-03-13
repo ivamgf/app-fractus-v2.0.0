@@ -11,7 +11,9 @@ import classesControler from '../../../controlers/classesControler'
 export default function Class() {
   const routes = dataRoute.routes
   const list = classesControler().list
+  const classList = classesControler().classList
   console.log('Aulas', list)
+  console.log('classList:', classList)
 
   return (
       <>
