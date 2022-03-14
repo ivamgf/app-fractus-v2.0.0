@@ -17,6 +17,9 @@ export default function CardClass() {
   const classList = classesControler().classList
   console.log('classList:',classList)
 
+  const sizeList = classList?.length
+  console.log("size:", sizeList)
+
   const handleNext = (event: any) => {
     event.preventDefault()
     setCount(count + 1)
@@ -29,7 +32,7 @@ export default function CardClass() {
     console.log('count dec:', count)
   }
 
-  const sceneList = classList?.filter((i: any) => (i.scene === count))
+  const sceneList = classList?.filter((i: any) => (i.scene === count) && (i.scene <= sizeList))
   console.log(sceneList)
 
   return (
@@ -68,8 +71,9 @@ export default function CardClass() {
 
             }
 
-
-            <Link to={''} style={
+            {
+              (count < sizeList) ?
+              <div style={
                 {
                   textDecoration: 'none',
                   marginLeft: 'auto',
@@ -77,10 +81,25 @@ export default function CardClass() {
                   marginTop: '0.5em'
                 }
               }>
-              <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleNext}>
-                Próxima <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
-              </Button>
-            </Link>
+                <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleNext}>
+                  Próxima <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
+                </Button>
+              </div>
+               :
+               <div style={
+                {
+                  textDecoration: 'none',
+                  marginLeft: 'auto',
+                  marginRight: '0.5em',
+                  marginTop: '0.5em'
+                }
+              }>
+                <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleNext} disabled={true}>
+                  Próxima <ArrowForwardIosIcon sx={{color: 'rgba(0, 0, 0, 0.26)', marginRight: '-0.5em'}} />
+                </Button>
+              </div>
+            }
+
           </Stack>
 
       </Card>
