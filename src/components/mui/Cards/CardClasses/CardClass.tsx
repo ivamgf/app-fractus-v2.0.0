@@ -59,7 +59,7 @@ console.log("Aula", classList)
       <Card sx={{minWidth: 275, margin: '1em 1em'}}>
 
         <Card>
-          <CardContent style={{ minHeight: '6em' }}>
+          <CardContent style={{ minHeight: '2em' }}>
 
             {
               (sceneList?.map((i: any) => i.content)) ? (
@@ -82,11 +82,11 @@ console.log("Aula", classList)
           </CardContent>
         </Card>
 
-        <CardContent style={{ minHeight: '16em', backgroundColor: '#F18620' }}>
+        <CardContent style={{ minHeight: '12em', backgroundColor: '#F18620' }}>
           {
             (sceneList?.map((i: any) => i.image)) ? (
               <div style={{ textAlign: 'center', marginBottom: '1em', marginTop: '2em' }}>
-                <ClassImage src={`${sceneList?.map((i: any) => i.image)}`} alt={`${sceneList?.map((i: any) => i.description)}`} width="150em" />
+                <ClassImage src={`${sceneList?.map((i: any) => i.image)}`} alt={`${sceneList?.map((i: any) => i.description)}`} width="170em" />
               </div>
               ) : (
                 <>
