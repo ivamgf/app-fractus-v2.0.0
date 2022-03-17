@@ -11,6 +11,7 @@ import Skeleton from '@mui/material/Skeleton';
 import ClassImage from "../../../lib/ClassImage";
 
 import classesControler from '../../../../controlers/classesControler'
+import questionsControler from '../../../../controlers/questionsControler'
 
 export default function CardClass() {
   const countInit = 1
@@ -19,6 +20,8 @@ export default function CardClass() {
   const id: any = params.id
   const classId = parseInt(id, 10)
   const list = classesControler().list
+  const questionsList = questionsControler().questionsList
+  console.log('questions:', questionsList)
 
   const classesList = list?.map((item: any ) => {
     return {
