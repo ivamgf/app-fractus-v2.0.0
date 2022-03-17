@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { Button, Divider, Stack } from '@mui/material'
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom"
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
-import Skeleton from '@mui/material/Skeleton';
-import ClassImage from "../../../lib/ClassImage";
+import Skeleton from '@mui/material/Skeleton'
+import ClassImage from "../../../lib/ClassImage"
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import FormControl from '@mui/material/FormControl'
+import FormLabel from '@mui/material/FormLabel'
 
 import classesControler from '../../../../controlers/classesControler'
 import questionsControler from '../../../../controlers/questionsControler'
@@ -21,7 +26,7 @@ export default function CardClass() {
   const classId = parseInt(id, 10)
   const list = classesControler().list
   const questionsList = questionsControler().questionsList
-  console.log('questions:', questionsList)
+  console.log('questions list:', questionsList)
 
   const classesList = list?.map((item: any ) => {
     return {
@@ -57,6 +62,9 @@ console.log("Aula", classList)
   const sceneList = classList?.filter((i: any) => (i.scene === count) && (i.scene <= sizeList))
   console.log(sceneList)
 
+  const questions = questionsList?.filter((i: any) => (i.class === classId))
+  console.log('questions:',questions)
+
   return (
     <>
       <Card sx={{minWidth: 275, margin: '1em 1em'}}>
@@ -86,6 +94,24 @@ console.log("Aula", classList)
         </Card>
 
         <CardContent style={{ minHeight: '12em', backgroundColor: '#F18620' }}>
+          {(questions?.find((i: any) => (i.scene === count))) ?
+          (
+            <FormControl>
+              <FormLabel id="demo-radio-buttons-group-label">Questão</FormLabel>
+              <RadioGroup
+                aria-labelledby="radio-buttons-group-label"
+                name="radio-buttons-group"
+              >
+                <FormControlLabel value={questions?.map((i: any) => (i.option1))} control={<Radio />} label={questions?.map((i: any) => (i.option1))} />
+                <FormControlLabel value={questions?.map((i: any) => (i.option2))} control={<Radio />} label={questions?.map((i: any) => (i.option2))} />
+                <FormControlLabel value={questions?.map((i: any) => (i.option3))} control={<Radio />} label={questions?.map((i: any) => (i.option3))} />
+                <FormControlLabel value={questions?.map((i: any) => (i.option4))} control={<Radio />} label={questions?.map((i: any) => (i.option4))} />
+              </RadioGroup>
+            </FormControl>
+          ) : (
+            <p></p>
+          )}
+
           {
             (sceneList?.map((i: any) => i.image)) ? (
               <div style={{ textAlign: 'center', marginBottom: '1em', marginTop: '2em' }}>
@@ -94,7 +120,7 @@ console.log("Aula", classList)
               ) : (
                 <>
                   <Skeleton variant="text" />
-                  <Skeleton variant="rectangular" width={210} height={118} />
+                  <Skeleton variant="rectangular" width={265} height={118} />
                 </>
               )
           }
