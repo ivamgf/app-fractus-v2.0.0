@@ -19,6 +19,8 @@ import classesControler from '../../../../controlers/classesControler'
 import questionsControler from '../../../../controlers/questionsControler'
 
 export default function CardClass() {
+  const fluxInit = 0
+  const [flux, setFlux] = useState(fluxInit)
   const countInit = 1
   const [ count, setCount] = useState(countInit)
   const params = useParams()
@@ -51,12 +53,36 @@ console.log("Aula", classList)
     event.preventDefault()
     setCount(count + 1)
     console.log('count inc:',count)
+    console.log('flux next:', flux)
+  }
+
+  const handleFlux1 = (event: any) => {
+    event.preventDefault()
+    const finalScene = classList.slice(-1).map((i: any) => { return {scene: i.scene}})
+    console.log('flux1:', finalScene.map((i: any) => i)[0].scene)
+    setCount(finalScene.map((i: any) => i)[0].scene)
+  }
+
+  const handleFlux2 = (event: any) => {
+    event.preventDefault()
+    const finalScene = classList.slice(-2, 1)
+    console.log(finalScene)
   }
 
   const handlePrev = (event: any) => {
     event.preventDefault()
     setCount((count > 1) ? (count - 1) : count)
     console.log('count dec:', count)
+  }
+
+  const handleRadio = (event: any) => {
+    event.preventDefault()
+    const valueRadio = event.target.value
+    console.log("radio:", valueRadio)
+    const answer = questions?.reduce((ac: any, i: any) => {(i.answer); return ac = i.answer}, [])
+    console.log('resp:', answer)
+    valueRadio === answer ? setFlux(1) : setFlux(2)
+    console.log('flux:', flux)
   }
 
   const sceneList = classList?.filter((i: any) => (i.scene === count) && (i.scene <= sizeList))
@@ -99,13 +125,33 @@ console.log("Aula", classList)
             <FormControl>
               <FormLabel id="demo-radio-buttons-group-label">Questão</FormLabel>
               <RadioGroup
-                aria-labelledby="radio-buttons-group-label"
+                aria-labelledby="demo-radio-buttons-group-label"
                 name="radio-buttons-group"
               >
-                <FormControlLabel value={questions?.map((i: any) => (i.option1))} control={<Radio />} label={questions?.map((i: any) => (i.option1))} />
-                <FormControlLabel value={questions?.map((i: any) => (i.option2))} control={<Radio />} label={questions?.map((i: any) => (i.option2))} />
-                <FormControlLabel value={questions?.map((i: any) => (i.option3))} control={<Radio />} label={questions?.map((i: any) => (i.option3))} />
-                <FormControlLabel value={questions?.map((i: any) => (i.option4))} control={<Radio />} label={questions?.map((i: any) => (i.option4))} />
+                <FormControlLabel
+                  value={questions?.reduce((ac: any, i: any) => {(i.option1); return ac = i.option1}, [])}
+                  control={<Radio />}
+                  label={questions?.reduce((ac: any, i: any) => {(i.option1); return ac = i.option1}, [])}
+                  onClick={handleRadio}
+                />
+                <FormControlLabel
+                  value={questions?.reduce((ac: any, i: any) => {(i.option2); return ac = i.option2}, [])}
+                  control={<Radio />}
+                  label={questions?.reduce((ac: any, i: any) => {(i.option2); return ac = i.option2}, [])}
+                  onClick={handleRadio}
+                />
+                <FormControlLabel
+                  value={questions?.reduce((ac: any, i: any) => {(i.option3); return ac = i.option3}, [])}
+                  control={<Radio />}
+                  label={questions?.reduce((ac: any, i: any) => {(i.option3); return ac = i.option3}, [])}
+                  onClick={handleRadio}
+                />
+                <FormControlLabel
+                  value={questions?.reduce((ac: any, i: any) => {(i.option4); return ac = i.option4}, [])}
+                  control={<Radio />}
+                  label={questions?.reduce((ac: any, i: any) => {(i.option4); return ac = i.option4}, [])}
+                  onClick={handleRadio}
+                />
               </RadioGroup>
             </FormControl>
           ) : (
@@ -120,7 +166,7 @@ console.log("Aula", classList)
               ) : (
                 <>
                   <Skeleton variant="text" />
-                  <Skeleton variant="rectangular" width={265} height={118} />
+                  <Skeleton variant="rectangular" height={118} />
                 </>
               )
           }
@@ -147,18 +193,54 @@ console.log("Aula", classList)
 
             {
               (count < sizeList) ?
-              <div style={
+
+              ( (flux === 0) ? (
+                <div style={
                 {
                   textDecoration: 'none',
                   marginLeft: 'auto',
                   marginRight: '0.5em',
                   marginTop: '0.5em'
                 }
-              }>
-                <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleNext}>
-                  Próxima <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
-                </Button>
-              </div>
+                }>
+                  <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleNext}>
+                    Próxima <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
+                  </Button>
+                </div>
+                ) : (
+                  (
+                    (flux === 1) ? (
+                      <div style={
+                      {
+                        textDecoration: 'none',
+                        marginLeft: 'auto',
+                        marginRight: '0.5em',
+                        marginTop: '0.5em'
+                      }
+                      }>
+                        <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleFlux1}>
+                          Próxima <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
+                        </Button>
+                      </div>
+                    ) : (
+                      <div style={
+                      {
+                        textDecoration: 'none',
+                        marginLeft: 'auto',
+                        marginRight: '0.5em',
+                        marginTop: '0.5em'
+                      }
+                      }>
+                        <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleFlux2}>
+                          Próxima <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
+                        </Button>
+                      </div>
+                    )
+                  )
+                )
+              )
+
+
                :
                <div style={
                 {
