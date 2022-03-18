@@ -19,6 +19,7 @@ import classesControler from '../../../../controlers/classesControler'
 import questionsControler from '../../../../controlers/questionsControler'
 
 export default function CardClass() {
+  const [valid, setValid] = useState(false)
   const fluxInit = 0
   const [flux, setFlux] = useState(fluxInit)
   const countInit = 1
@@ -52,8 +53,10 @@ console.log("Aula", classList)
   const handleNext = (event: any) => {
     event.preventDefault()
     setCount(count + 1)
+    valid === true ? setFlux(1) : setFlux(0)
     console.log('count inc:',count)
     console.log('flux next:', flux)
+    console.log('valid next:', valid)
   }
 
   const handleFlux1 = (event: any) => {
@@ -71,7 +74,18 @@ console.log("Aula", classList)
 
   const handlePrev = (event: any) => {
     event.preventDefault()
+    flux === 1 ?
+    (setCount(questions.map((i: any) => i.scene).slice(0,1)[0]),
+    setFlux(0)) :
     setCount((count > 1) ? (count - 1) : count)
+    console.log('count dec:', count)
+  }
+
+  const handlePrevFlux1 = (event: any) => {
+    event.preventDefault()
+    const prevCount = (questions.map((i: any) => i.scene).slice(0,1)[0]) + 1
+    console.log('prevCount:', prevCount)
+    setCount(prevCount)
     console.log('count dec:', count)
   }
 
@@ -81,8 +95,9 @@ console.log("Aula", classList)
     console.log("radio:", valueRadio)
     const answer = questions?.reduce((ac: any, i: any) => {(i.answer); return ac = i.answer}, [])
     console.log('resp:', answer)
-    valueRadio === answer ? setFlux(1) : setFlux(2)
+    valueRadio === answer ? setValid(true) : setValid(false)
     console.log('flux:', flux)
+    console.log('valid:', valid)
   }
 
   const sceneList = classList?.filter((i: any) => (i.scene === count) && (i.scene <= sizeList))
@@ -175,6 +190,7 @@ console.log("Aula", classList)
         <Divider />
 
           { (sizeList) ? (
+
             <Stack direction='row' spacing={3}>
             {
               (count === 1 ) ?
@@ -183,11 +199,21 @@ console.log("Aula", classList)
                   <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
                 </Button>
               </Link> :
-              <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
-                <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrev}>
-                  <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
-                </Button>
-              </div>
+
+              (flux === 1) && (count === classList.slice(-1).map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene) ?
+                <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
+                  <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrevFlux1}>
+                    <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
+                  </Button>
+                </div> :
+              (
+                <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
+                  <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrev}>
+                    <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
+                  </Button>
+                </div>
+              )
+
 
             }
 
