@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -19,7 +19,7 @@ import classesControler from '../../../../controlers/classesControler'
 import questionsControler from '../../../../controlers/questionsControler'
 
 export default function CardClass() {
-  const [valid, setValid] = useState(false)
+  const [valid, setValid] = useState(0)
   const fluxInit = 0
   const [flux, setFlux] = useState(fluxInit)
   const countInit = 1
@@ -52,8 +52,7 @@ console.log("Aula", classList)
 
   const handleNext = (event: any) => {
     event.preventDefault()
-    setCount(count + 1)
-    valid === true ? setFlux(1) : setFlux(0)
+    valid === 0 ? setCount(count + 1) : valid === 1 ? (setFlux(1), setCount(count + 1)) : (setFlux(2), setCount(count + 2))
     console.log('count inc:',count)
     console.log('flux next:', flux)
     console.log('valid next:', valid)
@@ -64,12 +63,17 @@ console.log("Aula", classList)
     const finalScene = classList.slice(-1).map((i: any) => { return {scene: i.scene}})
     console.log('flux1:', finalScene.map((i: any) => i)[0].scene)
     setCount(finalScene.map((i: any) => i)[0].scene)
+    console.log('valid next:', valid)
   }
 
   const handleFlux2 = (event: any) => {
     event.preventDefault()
-    const finalScene = classList.slice(-2, 1)
-    console.log(finalScene)
+    setCount(count + 1)
+    valid === 0 ?
+    setFlux(0) : (valid === 1) ?
+    (setFlux(1), setCount((questions?.map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene) + 1)) :
+    setFlux(2)
+    console.log('valid next:', valid)
   }
 
   const handlePrev = (event: any) => {
@@ -89,13 +93,22 @@ console.log("Aula", classList)
     console.log('count dec:', count)
   }
 
+  const handlePrevFlux2 = (event: any) => {
+    event.preventDefault()
+    const prevCount = (questions.map((i: any) => i.scene).slice(0,1)[0])
+    console.log('prevCount:', prevCount)
+    setCount(prevCount)
+    console.log('count dec:', count)
+    setFlux(0)
+  }
+
   const handleRadio = (event: any) => {
     event.preventDefault()
     const valueRadio = event.target.value
     console.log("radio:", valueRadio)
-    const answer = questions?.reduce((ac: any, i: any) => {(i.answer); return ac = i.answer}, [])
+    const answer = questions?.map((i: any) => (i.answer))[0]
     console.log('resp:', answer)
-    valueRadio === answer ? setValid(true) : setValid(false)
+    valueRadio === answer ? setValid(1) : (valueRadio != answer) ? setValid(2) : setValid(0)
     console.log('flux:', flux)
     console.log('valid:', valid)
   }
@@ -105,6 +118,8 @@ console.log("Aula", classList)
 
   const questions = questionsList?.filter((i: any) => (i.class === classId))
   console.log('questions:',questions)
+  console.log('questions flux 2:', questions?.map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene)
+  console.log('teste:', questions?.map((i: any) => (i.option1))[0])
 
   return (
     <>
@@ -142,30 +157,31 @@ console.log("Aula", classList)
               <RadioGroup
                 aria-labelledby="demo-radio-buttons-group-label"
                 name="radio-buttons-group"
+                onChange={handleRadio}
               >
                 <FormControlLabel
-                  value={questions?.reduce((ac: any, i: any) => {(i.option1); return ac = i.option1}, [])}
+                  value={questions?.map((i: any) => (i.option1))[0]}
                   control={<Radio />}
-                  label={questions?.reduce((ac: any, i: any) => {(i.option1); return ac = i.option1}, [])}
-                  onClick={handleRadio}
+                  label={questions?.map((i: any) => (i.option1))[0]}
+
                 />
                 <FormControlLabel
-                  value={questions?.reduce((ac: any, i: any) => {(i.option2); return ac = i.option2}, [])}
+                  value={questions?.map((i: any) => (i.option2))[0]}
                   control={<Radio />}
-                  label={questions?.reduce((ac: any, i: any) => {(i.option2); return ac = i.option2}, [])}
-                  onClick={handleRadio}
+                  label={questions?.map((i: any) => (i.option2))[0]}
+
                 />
                 <FormControlLabel
-                  value={questions?.reduce((ac: any, i: any) => {(i.option3); return ac = i.option3}, [])}
+                  value={questions?.map((i: any) => (i.option3))[0]}
                   control={<Radio />}
-                  label={questions?.reduce((ac: any, i: any) => {(i.option3); return ac = i.option3}, [])}
-                  onClick={handleRadio}
+                  label={questions?.map((i: any) => (i.option3))[0]}
+
                 />
                 <FormControlLabel
-                  value={questions?.reduce((ac: any, i: any) => {(i.option4); return ac = i.option4}, [])}
+                  value={questions?.map((i: any) => (i.option4))[0]}
                   control={<Radio />}
-                  label={questions?.reduce((ac: any, i: any) => {(i.option4); return ac = i.option4}, [])}
-                  onClick={handleRadio}
+                  label={questions?.map((i: any) => (i.option4))[0]}
+
                 />
               </RadioGroup>
             </FormControl>
@@ -200,13 +216,18 @@ console.log("Aula", classList)
                 </Button>
               </Link> :
 
-              (flux === 1) && (count === classList.slice(-1).map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene) ?
+              (flux === 1) && (count === classList?.slice(-1).map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene) ?
                 <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
                   <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrevFlux1}>
                     <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
                   </Button>
                 </div> :
-              (
+              ((flux === 2) && (count === (questions?.map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene)+2) ?
+                <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
+                  <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrevFlux2}>
+                    <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
+                  </Button>
+                </div> :
                 <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
                   <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrev}>
                     <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
