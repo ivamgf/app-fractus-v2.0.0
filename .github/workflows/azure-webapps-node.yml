@@ -68,7 +68,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'api-fractus-webservice-next'
+          app-name: 'app-fractus'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_85CF66AF6C77473AA948819BB76E6A9E }}
           package: .
