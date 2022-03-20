@@ -19,6 +19,7 @@ import classesControler from '../../../../controlers/classesControler'
 import questionsControler from '../../../../controlers/questionsControler'
 
 export default function CardClass() {
+  const [questionState, setQuestionState] = useState(false)
   const [valid, setValid] = useState(0)
   const fluxInit = 0
   const [flux, setFlux] = useState(fluxInit)
@@ -111,6 +112,8 @@ console.log("Aula", classList)
     valueRadio === answer ? setValid(1) : (valueRadio != answer) ? setValid(2) : setValid(0)
     console.log('flux:', flux)
     console.log('valid:', valid)
+    setQuestionState(true)
+    console.log('questionState:', questionState)
   }
 
   const sceneList = classList?.filter((i: any) => (i.scene === count) && (i.scene <= sizeList))
@@ -205,55 +208,153 @@ console.log("Aula", classList)
 
         <Divider />
 
-          { (sizeList) ? (
+          {
+            (sizeList) ? (
 
-            <Stack direction='row' spacing={3}>
-            {
-              (count === 1 ) ?
-              <Link to={`/views/classes/sumary/intro/${id}`} style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
-                <Button variant="contained" style={{backgroundColor: '#249DD9'}}>
-                  <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
-                </Button>
-              </Link> :
-
-              (flux === 1) && (count === classList?.slice(-1).map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene) ?
+              <Stack direction='row' spacing={3}>
+              {
+                (questions?.find((i: any) => (i.scene === count))) ?
                 <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
-                  <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrevFlux1}>
-                    <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
+                  <Button variant="contained" style={{backgroundColor: '#249DD9'}} disabled>
+                    <ArrowBackIosNewIcon sx={{color: 'rgba(0, 0, 0, 0.26)', marginLeft: '-0.5em'}} /> Voltar
                   </Button>
                 </div> :
-              ((flux === 2) && (count === (questions?.map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene)+2) ?
-                <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
-                  <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrevFlux2}>
+                (count === 1 ) ?
+                <Link to={`/views/classes/sumary/intro/${id}`} style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
+                  <Button variant="contained" style={{backgroundColor: '#249DD9'}}>
                     <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
                   </Button>
-                </div> :
-                <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
-                  <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrev}>
-                    <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
-                  </Button>
-                </div>
-              )
+                </Link> :
 
+                (flux === 1) && (count === classList?.slice(-1).map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene) ?
+                  <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
+                    <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrevFlux1}>
+                      <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
+                    </Button>
+                  </div> :
+                ((flux === 2) && (count === (questions?.map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene)+2) ?
+                  <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
+                    <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrevFlux2}>
+                      <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
+                    </Button>
+                  </div> :
+                  <div style={{textDecoration: 'none', margin: '0.5em', marginBottom: '0.5em'}}>
+                    <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handlePrev}>
+                      <ArrowBackIosNewIcon sx={{color: '#FFF', marginLeft: '-0.5em'}} /> Voltar
+                    </Button>
+                  </div>
+                )
 
             }
 
             {
-              (count < sizeList) ?
+              (questions?.find((i: any) => (i.scene === count))) ?
 
-              ( (flux === 0) ? (
+              (questionState === false) ?
+              (flux === 0) ? (
+
                 <div style={
-                {
-                  textDecoration: 'none',
-                  marginLeft: 'auto',
-                  marginRight: '0.5em',
-                  marginTop: '0.5em'
-                }
-                }>
-                  <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleNext}>
-                    Próxima <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
-                  </Button>
-                </div>
+                  {
+                    textDecoration: 'none',
+                    marginLeft: 'auto',
+                    marginRight: '0.5em',
+                    marginTop: '0.5em'
+                  }
+                  }>
+                    <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleNext} disabled>
+                      Responder <ArrowForwardIosIcon sx={{color: 'rgba(0, 0, 0, 0.26)', marginRight: '-0.5em'}} />
+                    </Button>
+                  </div> ) : (
+                    (
+                      (flux === 1) ? (
+                        <div style={
+                        {
+                          textDecoration: 'none',
+                          marginLeft: 'auto',
+                          marginRight: '0.5em',
+                          marginTop: '0.5em'
+                        }
+                        }>
+                          <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleFlux1} disabled>
+                            Responder <ArrowForwardIosIcon sx={{color: 'rgba(0, 0, 0, 0.26)', marginRight: '-0.5em'}} />
+                          </Button>
+                        </div>
+                    ) : (
+                      <div style={
+                      {
+                        textDecoration: 'none',
+                        marginLeft: 'auto',
+                        marginRight: '0.5em',
+                        marginTop: '0.5em'
+                      }
+                      }>
+                        <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleFlux2} disabled>
+                          Responder <ArrowForwardIosIcon sx={{color: 'rgba(0, 0, 0, 0.26)', marginRight: '-0.5em'}} />
+                        </Button>
+                      </div>
+                    )
+                  )
+                ) :
+              (flux === 0) ? (
+
+                <div style={
+                  {
+                    textDecoration: 'none',
+                    marginLeft: 'auto',
+                    marginRight: '0.5em',
+                    marginTop: '0.5em'
+                  }
+                  }>
+                    <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleNext}>
+                      Responder <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
+                    </Button>
+                  </div> ) : (
+                    (
+                      (flux === 1) ? (
+                        <div style={
+                        {
+                          textDecoration: 'none',
+                          marginLeft: 'auto',
+                          marginRight: '0.5em',
+                          marginTop: '0.5em'
+                        }
+                        }>
+                          <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleFlux1}>
+                            Responder <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
+                          </Button>
+                        </div>
+                    ) : (
+                      <div style={
+                      {
+                        textDecoration: 'none',
+                        marginLeft: 'auto',
+                        marginRight: '0.5em',
+                        marginTop: '0.5em'
+                      }
+                      }>
+                        <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleFlux2}>
+                          Responder <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
+                        </Button>
+                      </div>
+                    )
+                  )
+                ) :
+
+                  (count < sizeList) ?
+
+                  ( (flux === 0) ? (
+                    <div style={
+                    {
+                      textDecoration: 'none',
+                      marginLeft: 'auto',
+                      marginRight: '0.5em',
+                      marginTop: '0.5em'
+                    }
+                    }>
+                      <Button variant="contained" style={{backgroundColor: '#249DD9'}} onClick={handleNext}>
+                        Próxima <ArrowForwardIosIcon sx={{color: '#FFF', marginRight: '-0.5em'}} />
+                      </Button>
+                    </div>
                 ) : (
                   (
                     (flux === 1) ? (
