@@ -11,6 +11,7 @@ import BasicBreadcrumbs from '../../components/mui/Breadcrumbs'
 import contentHome from '../../data/jsons/contentHome'
 
 export default function Home() {
+
   const imageProps = ImagePizza
   const routes = contentHome.children.routes
 

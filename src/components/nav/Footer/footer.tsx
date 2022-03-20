@@ -66,6 +66,7 @@ const Footer = styled.div`
     @media screen and (max-width: 480px) {
       display: block;
       background-color: #249dd9;
+      min-height: 10em;
       padding: 2em;
       text-align: center;
       color: #ffffff;

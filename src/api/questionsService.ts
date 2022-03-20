@@ -3,12 +3,12 @@ import React, { useState } from "react"
 
 import { useApi } from '../hooks/useApi'
 
-export function classesService(endpoint: any) {
+export function questionsService(endpoint: any) {
 
-  const classes = useApi(endpoint)
+  const questions = useApi(endpoint)
 
   return {
-    classes
+    questions
   }
 }
 /*eslint-disable */

@@ -14,7 +14,7 @@ const contentAbout = {
       route1: 'Início',
       route2: 'Sobre',
       route3: '',
-      routeUrl: '/favicon.ico',
+      routeUrl: '/',
     },
   }
 }

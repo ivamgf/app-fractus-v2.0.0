@@ -7,7 +7,7 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import logo from '../../../../assets/logos/logo-32x32.png'
 import BasicAccordian from '../../../mui/Accordians/BasicAccordian'
-import { Button } from '@mui/material'
+import { Button, Divider } from '@mui/material'
 
 export default function CardTerms(props: TypeCardTerms) {
     const title = props.header.title
@@ -33,7 +33,9 @@ export default function CardTerms(props: TypeCardTerms) {
                 <BasicAccordian contentText={contentText}/>
 
               </CardContent>
-              <hr style={{marginBottom: '-0.5em'}} />
+
+              <Divider />
+              
               <CardActions >
                   <Link to="/home" style={{textDecoration: 'none'}}>
                     <Button value={buttonPrev.value} variant="contained" style={{backgroundColor: '#249DD9'}}>Voltar</Button>

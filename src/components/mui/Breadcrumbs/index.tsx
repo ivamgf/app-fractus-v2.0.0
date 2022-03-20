@@ -33,7 +33,7 @@ export default function BasicBreadcrumbs(props: TypeRoutes): JSX.Element {
                     </Link>
                 )}
                 {routes.route3 && (
-                    <Typography color="text.primary">
+                    <Typography color="inherit">
                         {routes.route3}
                     </Typography>
                 )}

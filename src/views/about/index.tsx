@@ -25,5 +25,5 @@ export default function About() {
 }
 
 const Main = styled.div`
-    margin: 0.5em 0.5em;
+    margin: 0.5em 2em;
 `
