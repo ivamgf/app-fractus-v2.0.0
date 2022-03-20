@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -18,6 +18,7 @@ import FormLabel from '@mui/material/FormLabel'
 import classesControler from '../../../../controlers/classesControler'
 import questionsControler from '../../../../controlers/questionsControler'
 
+/*eslint-disable */
 export default function CardClass() {
   const [questionState, setQuestionState] = useState(false)
   const [valid, setValid] = useState(0)
@@ -418,3 +419,4 @@ console.log("Aula", classList)
     </>
   );
 }
+/*eslint-disable */

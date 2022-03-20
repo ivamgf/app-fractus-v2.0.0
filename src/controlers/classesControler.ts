@@ -1,6 +1,6 @@
-import { any } from "prop-types";
-import React from "react";
-import { useParams } from "react-router";
+/*eslint-disable */
+import React from 'react'
+import { useParams } from "react-router"
 import { classesService } from '../api/ClassService'
 
 export default function classesControler() {
@@ -14,3 +14,4 @@ export default function classesControler() {
     list
   }
 }
+/*eslint-disable */

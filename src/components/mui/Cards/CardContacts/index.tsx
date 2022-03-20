@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from 'styled-components'
 
@@ -40,6 +40,7 @@ export default function CardContacts(props: TypeContacts) {
     }, 3000)
   }
 
+  /*eslint-disable */
   function handleChange(event: any) {
     const { value, name } = event.target
     setValues({
@@ -47,7 +48,9 @@ export default function CardContacts(props: TypeContacts) {
         [name]: value,
     })
   }
+  /*eslint-disable */
 
+  /*eslint-disable */
   const handleSubmit = async (event: any) => {
     event.preventDefault()
     console.log(values)
@@ -66,7 +69,9 @@ export default function CardContacts(props: TypeContacts) {
       )
     )
   }
+  /*eslint-disable */
 
+  /*eslint-disable */
   function sendEmail() {
     ApiService.post('mailer',
     {
@@ -85,6 +90,7 @@ export default function CardContacts(props: TypeContacts) {
         console.error("Error" + err)
       })
   }
+  /*eslint-disable */
 
   return (
     <>
