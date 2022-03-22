@@ -53,7 +53,6 @@ export default function CardContacts(props: TypeContacts) {
   /*eslint-disable */
   const handleSubmit = async (event: any) => {
     event.preventDefault()
-    console.log(values)
 
     !values.name ? setError(true) : (
     !values.email ? setError(true) : (

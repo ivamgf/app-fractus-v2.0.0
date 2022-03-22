@@ -42,7 +42,6 @@ export default function CardModel(props: TypeAccept): JSX.Element {
     React.useEffect(() => {
       cookieState ? cookies.set('termState', true, { path: '/' }) : cookies.set('termState', false, { path: '/' })
     }, [cookieState])
-    console.log('state:', buttonState)
 
     return (
         <>
