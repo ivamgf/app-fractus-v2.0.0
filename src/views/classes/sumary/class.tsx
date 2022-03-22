@@ -9,6 +9,7 @@ import CardClass from '../../../components/mui/Cards/CardClasses/CardClass'
 
 export default function Class() {
   const routes = dataRoute.routes
+
   return (
       <>
         <Header />

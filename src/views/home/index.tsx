@@ -9,11 +9,8 @@ import logo from '../../assets/logos/logo-fractus-cor.svg'
 import { Card, CardContent, Divider, Typography } from '@mui/material'
 import BasicBreadcrumbs from '../../components/mui/Breadcrumbs'
 import contentHome from '../../data/jsons/contentHome'
-import { classesService } from '../../api/ClassService'
 
 export default function Home() {
-  const list = classesService('classes')
-  console.log('Aulas', list)
 
   const imageProps = ImagePizza
   const routes = contentHome.children.routes

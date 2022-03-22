@@ -14,6 +14,7 @@ import Alert from '@mui/material/Alert';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import CloseIcon from '@mui/icons-material/Close';
+import { ApiService } from "../../../../api/ApiService";
 
 function initialState() {
   return {
@@ -39,6 +40,7 @@ export default function CardContacts(props: TypeContacts) {
     }, 3000)
   }
 
+  /*eslint-disable */
   function handleChange(event: any) {
     const { value, name } = event.target
     setValues({
@@ -46,7 +48,9 @@ export default function CardContacts(props: TypeContacts) {
         [name]: value,
     })
   }
+  /*eslint-disable */
 
+  /*eslint-disable */
   const handleSubmit = async (event: any) => {
     event.preventDefault()
     console.log(values)
@@ -55,13 +59,38 @@ export default function CardContacts(props: TypeContacts) {
     !values.email ? setError(true) : (
     !values.subject ? setError(true) : (
     !values.message ? setError(true) : (
+
+          sendEmail(),
           setOpen(true),
           redirectHome()
+
           )
         )
       )
     )
   }
+  /*eslint-disable */
+
+  /*eslint-disable */
+  function sendEmail() {
+    ApiService.post('mailer',
+    {
+      name: values.name,
+      email: values.email,
+      subject: values.subject,
+      message: values.message
+    },
+    {
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
+      .then((response) => console.info("Message sent successfully!"))
+      .catch((err) => {
+        console.error("Error" + err)
+      })
+  }
+  /*eslint-disable */
 
   return (
     <>
