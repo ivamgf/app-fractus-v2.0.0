@@ -31,7 +31,6 @@ export default function CardClass() {
   const classId = parseInt(id, 10)
   const list = classesControler().list
   const questionsList = questionsControler().questionsList
-  console.log('questions list:', questionsList)
 
   const classesList = list?.map((item: any ) => {
     return {
@@ -44,28 +43,19 @@ export default function CardClass() {
   }
 )
 
-console.log('id:', id)
-console.log("Aulas", classesList)
 const classList = classesList?.filter((i: any) => i.class === classId)
-console.log("Aula", classList)
 
   const sizeList = classList?.length
-  console.log("size:", sizeList)
 
   const handleNext = (event: any) => {
     event.preventDefault()
     valid === 0 ? setCount(count + 1) : valid === 1 ? (setFlux(1), setCount(count + 1)) : (setFlux(2), setCount(count + 2))
-    console.log('count inc:',count)
-    console.log('flux next:', flux)
-    console.log('valid next:', valid)
   }
 
   const handleFlux1 = (event: any) => {
     event.preventDefault()
     const finalScene = classList.slice(-1).map((i: any) => { return {scene: i.scene}})
-    console.log('flux1:', finalScene.map((i: any) => i)[0].scene)
     setCount(finalScene.map((i: any) => i)[0].scene)
-    console.log('valid next:', valid)
   }
 
   const handleFlux2 = (event: any) => {
@@ -75,7 +65,6 @@ console.log("Aula", classList)
     setFlux(0) : (valid === 1) ?
     (setFlux(1), setCount((questions?.map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene) + 1)) :
     setFlux(2)
-    console.log('valid next:', valid)
   }
 
   const handlePrev = (event: any) => {
@@ -84,46 +73,32 @@ console.log("Aula", classList)
     (setCount(questions.map((i: any) => i.scene).slice(0,1)[0]),
     setFlux(0)) :
     setCount((count > 1) ? (count - 1) : count)
-    console.log('count dec:', count)
   }
 
   const handlePrevFlux1 = (event: any) => {
     event.preventDefault()
     const prevCount = (questions.map((i: any) => i.scene).slice(0,1)[0]) + 1
-    console.log('prevCount:', prevCount)
     setCount(prevCount)
-    console.log('count dec:', count)
   }
 
   const handlePrevFlux2 = (event: any) => {
     event.preventDefault()
     const prevCount = (questions.map((i: any) => i.scene).slice(0,1)[0])
-    console.log('prevCount:', prevCount)
     setCount(prevCount)
-    console.log('count dec:', count)
     setFlux(0)
   }
 
   const handleRadio = (event: any) => {
     event.preventDefault()
     const valueRadio = event.target.value
-    console.log("radio:", valueRadio)
     const answer = questions?.map((i: any) => (i.answer))[0]
-    console.log('resp:', answer)
     valueRadio === answer ? setValid(1) : (valueRadio != answer) ? setValid(2) : setValid(0)
-    console.log('flux:', flux)
-    console.log('valid:', valid)
     setQuestionState(true)
-    console.log('questionState:', questionState)
   }
 
   const sceneList = classList?.filter((i: any) => (i.scene === count) && (i.scene <= sizeList))
-  console.log(sceneList)
 
   const questions = questionsList?.filter((i: any) => (i.class === classId))
-  console.log('questions:',questions)
-  console.log('questions flux 2:', questions?.map((i: any) => { return {scene: i.scene}}).map((i: any) => i)[0].scene)
-  console.log('teste:', questions?.map((i: any) => (i.option1))[0])
 
   return (
     <>
