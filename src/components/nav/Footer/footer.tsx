@@ -44,9 +44,9 @@ export default function FooterComponent() {
                             <PolicyIcon sx={{color: "#fff"}} />
                         </Link>
 
-                        <Link to={urlLink} style={{textDecoration: 'none'}}>
+                        <a href={urlLink} style={{textDecoration: 'none'}}>
                             <PublicIcon sx={{color: "#fff"}} />
-                        </Link>
+                        </a>
 
                         <Link to={contactLink} style={{textDecoration: 'none'}}>
                             <ContactsIcon sx={{color: "#fff"}} />
