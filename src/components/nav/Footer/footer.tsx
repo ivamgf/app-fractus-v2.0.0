@@ -15,10 +15,10 @@ import FooterDesktop from "../footerDesktop";
 export default function FooterComponent() {
     const cookies = new Cookies()
     const termState = cookies.get('termState')
-    const homeLink = '/views/home/'
+    const homeLink = '/home/'
     const aboutLink = '/views/about/'
     const termsLink = '/views/terms/'
-    const urlLink = ''
+    const urlLink = 'https://fractus.orkneytech.com.br/'
     const contactLink = '/views/contact/'
 
     return (
