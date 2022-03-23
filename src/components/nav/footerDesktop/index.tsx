@@ -61,14 +61,14 @@ const FooterDesktop = () => {
                         </Typography>
                     </Link>
 
-                    <Link to={urlLink} style={{textDecoration: 'none'}}>
+                    <a href={urlLink} style={{textDecoration: 'none'}}>
                         <PublicIcon sx={{color: "#fff"}} />
-                    </Link>
-                    <Link to={urlLink} style={{textDecoration: 'none'}}>
+                    </a>
+                    <a href={urlLink} style={{textDecoration: 'none'}}>
                         <Typography variant="subtitle1" component="div" sx={{color: "#fff"}}>
                             Site
                         </Typography>
-                    </Link>
+                    </a>
 
                     <Link to={contactLink} style={{textDecoration: 'none'}}>
                         <ContactsIcon sx={{color: "#fff"}} />
