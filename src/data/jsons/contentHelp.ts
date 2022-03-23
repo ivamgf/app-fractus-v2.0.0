@@ -13,9 +13,12 @@ const contentHelp = {
                 bem como em diferentes contextos de aprendizagem`,
         title3: 'Posso fazer download no Google Play?',
         text3: 'O aplicativo em breve será publicado no Google play e o download estará disponível',
-        title4: 'Como faço download no meu PC?',
+        title4: 'Como faço download do aplicativo?',
         text4: `Na barra de navegação do navegador aparecerá no canto direto um ícone com uma seta para baixo,
-                clicando neste link é possível fazer o download para PC.`,
+                clicando neste link é possível fazer o download para PC. Para celular é só acessar o aplicativo pelo navegador.
+                No navegador, no canto superior direito você encontrará um ícone com 3 pontos. Basta clicar para abrir o menu de opções,
+                selecione então a opção "Adicionar à tela inicial" e o aplicativo será baixado para o celular e você poderá acessar através do ícone
+                do aplicativo na tela inicial do seu celular.`,
         title5: 'Não roda no meu celular, e agora?',
         text5: `O aplicativo foi desenvolvido para rodar somente em sistema Android.
                 É possível que ocorra problemas em sistemas Androids desatualizados e em versões muito antigas.
