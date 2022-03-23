@@ -5,14 +5,14 @@ import MainIntro from '../../__mocks__/MainMock'
 
 describe('App Fractus - Main', () => {
 
-    it('should return text', () => {
-        render(<MainIntro />)
-        const p = screen.getByText('Aprendendo Frações com Fractus!')
-        expect(p).toBeInTheDocument()
-    })
-    it('should return alt text image', () => {
+  it('should return text', () => {
       render(<MainIntro />)
-      const img = screen.getByAltText('logo')
-      expect(img).toBeInTheDocument()
+      const h1 = screen.getByText('Aprendendo Frações com Fractus!')
+      expect(h1).toBeInTheDocument()
+  })
+  it('should return alt text image', () => {
+    render(<MainIntro />)
+    const img = screen.getByAltText('logo')
+    expect(img).toBeInTheDocument()
   })
 })

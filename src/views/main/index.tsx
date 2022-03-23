@@ -16,7 +16,7 @@ export default function MainIntro() {
         <HeaderInit />
         <div className='container'>
           <Main className='main'>
-            <p>Aprendendo Frações com Fractus!</p>
+            <h1>Aprendendo Frações com Fractus!</h1>
             <img
               src={logo}
               className="App-logo"
