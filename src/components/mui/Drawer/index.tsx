@@ -180,7 +180,7 @@ export default function PersistentDrawerLeft() {
                                 <ClassIcon style={{ color: '#249DD9' }} />
                             </ListItemIcon>
                             <ListItemText style={{ color: '#249DD9' }}>
-                                Aulas
+                                Objetos de Aprendizagem
                             </ListItemText>
                         </ListItem>
                     </Link>
