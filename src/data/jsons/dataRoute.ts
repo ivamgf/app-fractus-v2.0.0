@@ -2,8 +2,8 @@
 const dataRoute = {
   routes: {
     route1: 'Início',
-    route2: 'Aulas',
-    route3: 'Sala de Aula'
+    route2: 'Objetos de Aprendizagem',
+    route3: 'Aula'
   }
 }
 

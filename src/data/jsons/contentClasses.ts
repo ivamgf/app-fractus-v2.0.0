@@ -1,20 +1,20 @@
 
 const contentClasses = {
   content: {
-    title: 'Aulas',
+    title: 'Objetos de Aprendizagem',
     classes: {
-      class1: 'Aula 1',
-      class2: 'Aula 2',
-      class3: 'Aula 3',
-      class4: 'Aula 4',
-      class5: 'Aula 5',
-      class6: 'Aula 6',
+      class1: 'Frações com Pizza',
+      class2: 'Frações com Laranja',
+      class3: 'Frações com Chocolate',
+      class4: 'Conceitos Básicos',
+      class5: 'Adição e Subtração',
+      class6: 'Multiplicação e Divisão',
     }
   },
   children: {
     routes: {
       route1: 'Início',
-      route2: 'Aulas',
+      route2: 'Objetos de Aprendizagem',
       route3: '',
       routeUrl: '/',
     }

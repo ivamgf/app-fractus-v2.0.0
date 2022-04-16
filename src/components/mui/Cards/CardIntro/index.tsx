@@ -20,12 +20,14 @@ export default function CardIntro(props: TypeIntro) {
   const image2 = props.content.image2
   const alt2 = props.content.textImage2
   const width2 = '90%'
-  const ordinal = (
-      (id === '1') ? "primeira" : (
-      (id === '2') ? "segunda" : (
-      (id === '3') ? "terceira" : (
-      (id === '4') ? "quarta" : (
-      (id === '5') ? "quinta" : "mais uma")
+  const subTitle = (
+      (id === '1') ? "Frações com Pizza" : (
+      (id === '2') ? "Frações com Laranja" : (
+      (id === '3') ? "Frações com Chocolate" : (
+      (id === '4') ? "Conceitos Básicos" : (
+      (id === '5') ? "Adição e Subtração" : (
+      (id === '6') ? "Multiplicação e Divisão" : "mais uma")
+            )
           )
         )
       )
@@ -49,7 +51,7 @@ export default function CardIntro(props: TypeIntro) {
 
           <Typography variant="inherit" style={{ textAlign: 'left', marginTop: '2em', marginLeft: '2em' }}>
             <span style={{ fontSize: '2em', marginLeft: '0em', marginBottom: '1em', color: '#FFF' }}>
-                {title} {id}
+                {subTitle}
             </span>
 
           </Typography>
@@ -57,7 +59,7 @@ export default function CardIntro(props: TypeIntro) {
         </CardContent>
 
         <Typography variant="body2" style={{ textAlign: 'left', marginBottom: '3em', marginLeft: '1em', marginTop: '1em' }}>
-          Esta é a {ordinal} aula sobre frações
+          Esta é a aula sobre {subTitle}
         </Typography>
 
         <Divider />
