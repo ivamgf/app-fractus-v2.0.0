@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ homolog ]
+    branches: [ main ]
   pull_request:
-    branches: [ homolog ]
+    branches: [ main ]
 
 jobs:
 
