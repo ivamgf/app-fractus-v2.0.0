@@ -2,7 +2,7 @@
 import React from 'react'
 import axios from 'axios'
 
-const url = 'https://api-fractus-next.herokuapp.com/api/'
+const url = 'https://api-fractus.herokuapp.com/api/'
 
 export const ApiService = axios.create({
   baseURL: url,
