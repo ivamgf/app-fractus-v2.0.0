@@ -13,7 +13,7 @@ export default function CardIntro(props: TypeIntro) {
   const params = useParams()
   const id = params.id
 
-  const title = props.content.title
+  // const title = props.content.title
   const image1 = props.content.image1
   const alt1 = props.content.textImage1
   const width1 = '20%'
