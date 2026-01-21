@@ -1,13 +1,13 @@
 /*eslint-disable */
-import React from 'react'
 import { classesService } from '../api/ClassService'
 
-export default function classesControler() {
-  const resp = classesService('classes')
-  const list = resp.classes.data
+export default function classController() {
+  const { classes } = classesService()
 
   return {
-    list
+    list: classes.data,
+    isLoading: classes.isLoading,
+    isError: classes.isError
   }
 }
 /*eslint-disable */
