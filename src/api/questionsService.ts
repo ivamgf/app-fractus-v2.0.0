@@ -3,8 +3,9 @@ import React, { useState } from "react"
 
 import { useApi } from '../hooks/useApi'
 
-export function questionsService() {
-  const questions = useApi('/questions')
+export function questionsService(endpoint: any) {
+
+  const questions = useApi(endpoint)
 
   return {
     questions

@@ -1,13 +1,15 @@
 /*eslint-disable */
+import React from 'react'
 import axios from 'axios'
 
-export const api = axios.create({
-  baseURL: 'https://api-fractus-next-v4-9ab380a16ec1.herokuapp.com/api',
+const url = 'https://api-fractus-next-v4-9ab380a16ec1.herokuapp.com/api'
+
+export const ApiService = axios.create({
+  baseURL: url,
   headers: {
-    'Content-Type': 'application/json',
+    'Content-type': 'application/json',
     'Accept': 'application/json'
-  },
-  timeout: 15000
+  }
 })
 
 /*eslint-disable */
