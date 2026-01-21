@@ -3,12 +3,13 @@ import { any } from "prop-types";
 import React from "react";
 import { questionsService } from '../api/questionsService'
 
-export default function classesControler() {
-  const resp = questionsService('questions')
-  const questionsList = resp.questions.data
+export default function questionsController() {
+  const { questions } = questionsService()
 
   return {
-    questionsList
+    questionsList: questions.data,
+    isLoading: questions.isLoading,
+    isError: questions.isError
   }
 }
 /*eslint-disable */
