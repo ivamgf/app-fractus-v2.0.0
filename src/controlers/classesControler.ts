@@ -1,13 +1,15 @@
 /*eslint-disable */
-import React from 'react'
-import { classesService } from '../api/ClassService'
+import { any } from "prop-types";
+import React from "react";
+import { questionsService } from '../api/questionsService'
 
-export default function classesControler() {
-  const resp = classesService('classes')
-  const list = resp.classes.data
+export default function questionsController() {
+  const { questions } = questionsService()
 
   return {
-    list
+    questionsList: questions.data,
+    isLoading: questions.isLoading,
+    isError: questions.isError
   }
 }
 /*eslint-disable */
