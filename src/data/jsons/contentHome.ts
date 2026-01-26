@@ -4,7 +4,7 @@ const contentHome = {
       subTitle: '',
       description: 'Objeto de Aprendizagem para Ensino de Frações.',
       meta: '',
-      image: '../../../../assets/logos/logo-fractus-cor.svg'
+      image: 'https://storage.googleapis.com/fractus-bucket/logo-fractus-cor.svg'
   },
   children: {
     routes: {
