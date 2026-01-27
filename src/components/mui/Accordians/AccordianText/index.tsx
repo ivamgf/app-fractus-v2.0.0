@@ -84,7 +84,7 @@ export default function AccordionText(props: any): JSX.Element {
                         <Image src={pathImg5} alt={altText} width='20%' />
 
                         <Typography variant="body2" style={{ textAlign: 'center', marginBottom: '1em' }}>
-                          <a href="http://app-fractus.orkneytech.com.br/texts/texto1.pdf" style={{textDecoration: 'none', color: '#fff'}}>Baixar o Texto 1</a>
+                          <a href="https://storage.googleapis.com/fractus-bucket/texto1.pdf" style={{textDecoration: 'none', color: '#fff'}}>Baixar o Texto 1</a>
                         </Typography>
 
                     </AccordionDetails>
