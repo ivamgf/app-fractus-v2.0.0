@@ -51,7 +51,7 @@ export default function CardExercises(props: TypeCardExercises) {
 
             <AccordionDetails style={{backgroundColor: '#4bc4ff'}}>
               <Typography variant="body2" style={{ textAlign: 'center', marginBottom: '1em' }}>
-                <a href="http://app-fractus.orkneytech.com.br/exercises/exercicios-de-fracoes1.pdf" style={{textDecoration: 'none', color: '#fff'}}>Baixar a Lista 1</a>
+                <a href="https://storage.googleapis.com/fractus-bucket/exercicios-de-fracoes1.pdf" style={{textDecoration: 'none', color: '#fff'}}>Baixar a Lista 1</a>
               </Typography>
             </AccordionDetails>
           </Accordion>
