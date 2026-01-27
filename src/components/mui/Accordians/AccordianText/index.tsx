@@ -38,7 +38,7 @@ export default function AccordionText(props: any): JSX.Element {
     const pathImg14 = 'fracao14.png'
     const pathImg15 = 'fracao15.png'
     const pathImg16 = 'fracao16.png'
-    const pathImg17 = 'fracao17'
+    const pathImg17 = 'fracao17.png'
     const pathImg18 = 'fracao18.png'
     const pathImg19 = 'fracao19.png'
     const pathImg20 = 'fracao20.png'
